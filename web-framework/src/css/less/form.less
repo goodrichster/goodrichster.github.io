@@ -1,0 +1,621 @@
+// examples in other frameworks
+//  https://github.com/olton/Metro-UI-CSS/blob/master/css/modern.css
+
+.component-framework {
+
+   button { cursor: pointer;} 
+
+   .field {
+      background: #eee none;
+      padding: 8px 10px;
+      border: 1px solid #d5d5d5;
+      .type-framework .paragraph;
+      line-height: 1.2;
+      width: 100%;
+      box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+      //.transition(background 0.05s linear);
+      vertical-align: middle;
+      -webkit-border-radius:0; 
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+      box-sizing: border-box;         /* Opera/IE 8+ */
+   }
+   
+   .field.focus,
+   .field:hover:focus,
+   .field:focus {
+      border: 1px solid black;
+      background-color: white;
+      outline: none;
+      box-shadow: none;
+   }
+   
+   .field:hover {
+      border: 1px solid #bfbfbf;
+   }
+   
+   .disabled .field {
+      border: 1px solid #ccc;
+      color: #ccc;
+      background-color: white;
+      outline: none;
+      box-shadow: none;
+   }
+   
+   .field-error .field,
+   .field.field-error,
+   .field.error { // jg, legacy .error used on mba site, renaimg to .field-error to be more specific
+      border: 3px solid #ff2100;
+      color: #ff2100;
+      padding: 6px 10px 5px;
+      background-color: white;
+      box-shadow: none;
+      &:hover {
+         border: 3px solid #ff2100;
+      }
+   }
+
+  
+   .parsley-error-list {.type-framework .nu; .unstyled-list();}
+
+   .parsley-error-list,
+   .field-error,
+   .field-group-error {
+      color: #ff2100;
+   }
+   
+   select.field {
+      -webkit-appearance: menulist;
+      line-height: 32px;
+      margin: 0;
+   }
+   
+   // legacy, use .field-select
+   .select-field {
+      .field;
+      padding: 7px 10px;
+      
+      select {
+           -webkit-appearance: menulist;
+           margin: 0;
+           border: 0;
+           background: #eee none;
+           width: 100%;
+          .type-framework .paragraph;
+      }
+   }
+   
+   .field-select {
+      .field;
+      display: block;
+      margin: 0;
+      padding: 5px 0 5px 0;
+      padding-left: 5px\9; // ie8+7
+      *padding-right: 10px; // ie7
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+     
+      select {
+           background: transparent;
+           *background-color: #eee; //ie7
+           -webkit-appearance: none;
+           height: 26px;
+           padding: 0;
+           text-indent: 4px;
+           margin: 0;
+           border: 0;
+           width: 100%;
+           *width: 100%;
+          .type-framework .paragraph;
+          -moz-appearance: none;
+          text-overflow: '';
+      }
+     
+      .field-select-btn {
+           float: right;
+           display: block;
+           .opacity(.6);
+           margin-top: 9px;
+           margin-right: 8px;
+           background-color: #eee;
+           *display: none;
+      }
+      .icon-expand-inverted {
+           float: right;
+           display: block;
+           .opacity(.99);
+           margin-top: 9px;
+           margin-right: 8px;
+           *display: none;
+      }
+
+      &.kappa-uc {
+           select {
+                .type-framework .kappa-uc;
+           }
+      }
+      &.white {
+           select {
+                color: white;
+           }
+      }
+      &.black-bg {
+           border-color: black;
+           select {
+                background-color: black;
+           }
+      }
+   }
+   
+   .field-select:hover {
+      border: 1px solid #aaa;
+   }
+   
+   .field-select-focus {
+      border: 1px solid black;
+      background-color: white;
+      outline: none;
+      box-shadow: none;
+      
+      select {
+         outline: none;
+      }
+      
+      .field-select-btn {
+         .opacity(1);
+         background-color: white;
+      }
+   }
+   
+   .field-select-focus:hover{
+      border: 1px solid black;
+   }
+
+   .field-select2 select {
+        .field;
+        visibility: hidden;
+   }
+   
+   .field-error .field-select,
+   .field-error .field-select2 .selectboxit {
+      border: 3px solid #ff2100;
+      color: #ff2100;
+      background-color: white;
+      &:hover {
+         border: 3px solid #ff2100;
+      }
+   }
+
+   label {
+      cursor: pointer;
+   }
+    
+   label.field-error {
+      color: #ff2100;
+   }
+   
+   .field-checkbox,
+   .field-checkbox-checked,
+   .field-radio,
+   .field-radio-checked {.unselectable()};
+   
+   
+   .field-checkbox input,
+   .field-checkbox-checked input,
+   .field-radio input,
+   .field-radio-checked input { position: absolute; left: -10000px;}
+   .field-checkbox .field-checkbox-btn,
+   .field-checkbox-checked .field-checkbox-btn,
+   .field-radio .field-radio-btn,
+   .field-radio-checked .field-radio-btn { margin-bottom: -1px; margin-right:1px;}
+
+   .field-radio .field-radio-check:after { content: ''; width: 14px; display:inline-block;}
+   .field-radio-checked .field-radio-check:after { content: '\2713'; }
+  
+
+   
+   .btn-submit {
+        &::-moz-focus-inner {
+           border: 0 none;
+           padding: 0;
+        }
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        -webkit-font-smoothing: antialiased; //1
+        
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        -moz-user-select: none;
+        background-color: @hbsred;
+        border: 0;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        padding: 9px 11px 9px 11px;
+        margin: 0;
+        position: relative;
+        line-height: 1.2; //http://www.456bereastreet.com/archive/201108/line-height_in_input_fields/
+        vertical-align: middle;
+        white-space: nowrap;
+        .transition(background 0.1s linear);
+        &:hover{ background-color: #181818;text-decoration: none;}
+     
+        &:active {
+            top: 1px;  
+            left: 1px;
+            position: relative;
+       }
+         
+       &[disabled] { cursor: default; }
+         
+       .icon-search-white { margin: 0 2px -3px 2px; }
+   }
+   
+   
+   .field-shim {
+        margin-top: 22px;
+   }
+   
+   .field-group-vertical {
+        label,.field-label {
+            margin-bottom: 7px;
+            display: block;
+        }
+        .field {
+            margin-bottom: 10px;
+            display: block;
+        }
+        .field ~ .field {
+            margin-top: -2px;
+        }
+        .parsley-error-list {
+           margin-top: 10px;
+        }
+    }
+    
+}
+
+
+
+
+.component-framework {
+
+.field-select2 select {
+    width: 100% !important;
+}
+
+.field-select2.black-bg {
+
+    background-color: transparent;
+
+    .selectboxit-btn {
+      background-color: black;
+      color: white;
+      &:focus,
+      &:hover {
+        color: #eee;
+      }
+    }
+
+    .selectboxit-default-arrow {
+        background-image: url('../images/framework/3.0/framework.png');
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: -240px -80px;
+        width: 13px;
+        height: 11px;
+       .opacity(1);
+    }
+
+    .selectboxit-list {
+        background-color: black;
+    }
+
+    .selectboxit-option-anchor {
+       color: white;
+    }
+
+    x.selectboxit-open {
+      background-color: black;
+      color: black;
+    }
+   
+    x.selectboxit-btn.selectboxit-open,
+    x.selectboxit-btn.selectboxit-open:hover{
+      color: #333;
+    }
+
+}
+
+/*
+ * jquery.selectBoxIt.css 3.6.0
+ * Author: @gregfranko
+ */
+
+/*
+  Common CSS Properties
+  ---------------------
+  These properties will be applied to any themes that you use
+*/
+
+/* SelectBoxIt container */
+.selectboxit-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+/* Styles that apply to all SelectBoxIt elements */
+.selectboxit-container * {
+  /* Prevents text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+/* Button */
+.selectboxit-container .selectboxit {
+  //width: 99%;
+  cursor: pointer;
+  margin: 0;
+  padding: 2px 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+/* Height and Vertical Alignment of Text */
+.field-select2-mini .selectboxit-container span,
+.field-select2-mini .selectboxit-container .selectboxit-options a {
+    height: 22px;
+    line-height: 22px;
+}
+
+.selectboxit-container span, .selectboxit-container .selectboxit-options a {
+  height: 30px; /* Height of the drop down */
+  line-height: 30px; /* Vertically positions the drop down text */
+  display: block;
+}
+
+/* Focus pseudo selector */
+.selectboxit-container .selectboxit:focus {
+  outline: 0;
+}
+
+
+/* Disabled Mouse Interaction */
+.selectboxit.selectboxit-disabled, .selectboxit-options .selectboxit-disabled {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Button Text */
+.selectboxit-text {
+  text-indent: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+.selectboxit .selectboxit-option-icon-container {
+  margin-left: 5px;
+}
+
+/* Options List */
+.selectboxit-container .selectboxit-options {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 100%;  /* Minimum Width of the dropdown list box options */
+  *width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  cursor: pointer;
+  display: none;
+  z-index: 9999999999999;
+  text-align: left;
+}
+
+/* Individual options */
+ .selectboxit-option .selectboxit-option-anchor{
+  padding: 0 2px;
+}
+
+/* Individual Option Hover Action */
+.selectboxit-option .selectboxit-option-anchor:hover {
+  text-decoration: none;
+}
+
+/* Individual Option Optgroup Header */
+.selectboxit-option, .selectboxit-optgroup-header {
+  text-indent: 4px; /* Horizontal Positioning of the select box option text */
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none;
+}
+
+/* The first Drop Down option */
+.selectboxit-option-first {
+}
+
+/* The first Drop Down option optgroup */
+.selectboxit-optgroup-header + .selectboxit-option-first {
+}
+
+/* The last Drop Down option */
+.selectboxit-option-last {
+}
+
+/* Drop Down optgroup headers */
+.selectboxit-optgroup-header {
+  font-weight: bold;
+}
+
+/* Drop Down optgroup header hover psuedo class */
+.selectboxit-optgroup-header:hover {
+  cursor: default;
+}
+
+/* Drop Down down arrow container */
+.selectboxit-arrow-container {
+  /* Positions the down arrow */
+  width: 30px;
+  position: absolute;
+  right: 0;
+}
+
+/* Drop Down down arrow */
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+  /* Horizontally centers the down arrow */
+  margin: 0 auto;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+}
+
+.field-select2-mini .selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+  top: 6px;
+}
+
+/* Drop Down down arrow for jQueryUI and jQuery Mobile */
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow.ui-icon {
+  top: 30%;
+}
+
+/* Drop Down individual option icon positioning */
+.selectboxit-option-icon-container {
+  float: left;
+}
+
+.selectboxit-container .selectboxit-option-icon {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* Drop Down individual option icon positioning */
+.selectboxit-option-icon-url {
+  width: 18px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  float: left;
+}
+
+/* jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon {
+  background-color: inherit;
+}
+
+/* Another jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+.selectboxit-btn {
+  background-color: #eee;
+  border: 1px solid #d5d5d5;
+  .type-framework .paragraph;
+  line-height: 1.2;
+  width: 100%;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.field-select2.mu .selectboxit-btn {
+    .type-framework .mu;
+}
+.field-select2.mu-uc .selectboxit-btn {
+    .type-framework .mu-uc;
+}
+.field-select2.nu .selectboxit-btn {
+    .type-framework .nu;
+}
+.field-select2.nu-uc .selectboxit-btn {
+    .type-framework .nu-uc;
+}
+.selectboxit-hover {
+    border-color: #aaa;
+}
+
+.selectboxit-open {
+  background-color: white;
+  border-color: black;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus,
+.selectboxit-btn.selectboxit-enabled:active {
+  color: #333333;
+}
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus {
+  color: #333333;
+  text-decoration: none;
+  background-position: 0 -15px;
+}
+
+.selectboxit-default-arrow {
+    background-image: url('../images/framework/3.0/framework.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-position: -220px -80px;
+    width: 13px;
+    height: 11px;
+   .opacity(.6);
+}
+
+.selectboxit-list {
+  background-color: #ffffff;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Trade Gothic W01 Bold 2';
+}
+
+.selectboxit-list .selectboxit-option-anchor {
+  color: #333333;
+}
+
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  color: #fff;
+  background-color: @hbsred;
+  font-family: 'Trade Gothic W01 Bold 2';
+}
+
+.selectboxit-list > .selectboxit-disabled > .selectboxit-option-anchor {
+  color: #999999;
+}
+
+}
+
+
+:-moz-any(.field-selec):before {
+  background-color: #fff; /* this is necessary for overcome the caret default browser */
+  pointer-events: none; /* https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events  */
+  z-index: 1; /* this is necessary for overcome the pseudo element */
+}

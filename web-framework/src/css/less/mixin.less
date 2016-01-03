@@ -1,0 +1,149 @@
+
+.unstyled-list() {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   li {
+       list-style-type: none;
+       margin-bottom: 0;
+       *height: 1%;
+   }
+   li:before {
+       display: none;
+   }
+}
+
+.user-select-none(){
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.unselectable() {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+}
+
+.greek(@alpha,@font,@size,@lineh,@spacing:0,@rendering:auto) {
+    [class*=h1-] h1.@{alpha},[class*=h2-] h2.@{alpha},[class*=h3-] h3.@{alpha},[class*=h4-] h4.@{alpha},[class*=h5-] h5.@{alpha},
+    .h1-@{alpha} h1,.h2-@{alpha} h2,.h3-@{alpha} h3,.h4-@{alpha} h4,.h5-@{alpha} h5, 
+    .@{alpha} {
+       font-family: @font, Arial, Helvetica, Verdana, sans-serif; 
+       font-weight: normal;
+       font-size: @size;
+       line-height: @lineh;
+       letter-spacing: @spacing;
+       text-rendering: @rendering;
+    }
+    [class*=h1-] h1.@{alpha}-uc, [class*=h2-] h2.@{alpha}-uc, [class*=h3-] h3.@{alpha}-uc, [class*=h4-] h4.@{alpha}-uc, [class*=h5-] h5.@{alpha}-uc,
+    .h1-@{alpha}-uc h1,.h2-@{alpha}-uc h2,.h3-@{alpha}-uc h3,.h4-@{alpha}-uc h4,.h5-@{alpha}-uc h5, 
+    .@{alpha}-uc {
+       font-family: @font, Arial, Helvetica, Verdana, sans-serif; 
+       font-weight: normal;
+       font-size: @size;
+       line-height: @lineh;
+       text-transform: uppercase;
+       letter-spacing: @spacing;
+       text-rendering: @rendering;
+    }
+}
+
+
+.sprite(@w,@h,@x,@y){
+    background-image: ~"url('../images/framework/3.0/framework.png')";
+    //_background-image: ~"url('../images/framework/3.0/framework.gif')";
+    background-repeat: no-repeat;
+    display: inline-block;  
+    background-position: -@x -@y;
+    width: @w;
+    height: @h;
+}
+
+// https://github.com/dmitryf/elements/blob/master/elements.less
+
+.opacity(@opacity: 0.5) {
+  //IE 8
+  //-ms-filter: ~"'progid:DXImageTransform.Microsoft.Alpha(Opacity=" @opacity*100 ~")'";  
+  //IE 5-7
+  filter: ~"alpha(opacity=" @opacity*100 ~")";  
+  //Netscape
+  -moz-opacity: @opacity;
+  //Safari 1.x
+  -khtml-opacity: @opacity;
+  //Good browsers
+  opacity: @opacity;
+}
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.transition (@value1,@value2:X,...)
+{
+    @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+
+    -webkit-transition: @value;
+    -moz-transition: @value;
+    -ms-transition: @value;
+    -o-transition: @value;
+    transition: @value;
+}
+
+.animation(@animation) {
+    -webkit-animation: @animation;
+    -moz-animation: @animation;
+    -o-animation: @animation;
+    animation: @animation;
+}
+
+.transform(@string){
+    -webkit-transform: @string;
+    -moz-transform:      @string;
+    -ms-transform:       @string;
+    -o-transform:        @string;
+}

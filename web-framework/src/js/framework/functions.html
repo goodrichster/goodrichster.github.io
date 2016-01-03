@@ -1,0 +1,44 @@
+<h1><a class="black section" name="functions">functions</a></h1>
+<p>JavaScript Utility Functions</p>
+
+<div class="row" id="backtotop-test">
+<div class="span8">
+<textarea class="prettyprint">
+//https://github.com/js-coder/cookie.js
+framework.cookie.set('key','value',{path:'/',expires:7}); // expires in 7 days
+framework.cookie.get('key');
+framework.cookie.set('key','',{path:'/',expires:-1}) // removes the cookie
+</textarea>
+
+<textarea class="prettyprint">
+//http://medialize.github.io/URI.js/docs.html
+framework.URI().search(true); // {foo:'bar',q:['one','two']}
+</textarea>
+
+<textarea class="prettyprint">
+var dlg = new framework.Dialog({
+                                 body: "This will delete all your data.  Are you sure?",
+                                 title: "Confirm",
+                                 width: '400px',
+                                 buttons: {
+                                    "ok": function(){alert("OK")},
+                                    "cancel": function(){alert("Cancel")},
+                                 }
+                              });
+dlg.open();
+dlg.close();
+dlg.onClose(function(){
+   alert('closed');
+});
+</textarea>
+<p><a href="examples/dialog.html">More Examples</a></p>
+
+</div>
+<div class="span6 orange-inherit">
+
+</div>
+</div>
+
+
+
+

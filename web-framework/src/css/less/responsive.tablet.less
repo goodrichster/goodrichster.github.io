@@ -1,0 +1,146 @@
+
+@media  screen and (min-width: @tablet-min-width) and (max-width: @tablet-max-width) {
+   .responsive-tablet();
+   .responsive-supernav();
+}
+
+.responsive-tablet(){
+    .responsive-framework {
+    
+        .desktop-hidden  { display: inherit; }
+        .desktop-visible { display: none; }
+        .tablet-visible  { display: inherit; }
+        .tablet-hidden   { display: none; }
+
+        // cap and base go away, you need to reestablish them with the tablet-base
+
+        .cap, .base { margin: 0;}
+        .page-header .mobile-base {
+            margin: 20px 0 0 0;
+        }
+        .tablet-cap {
+            margin-bottom: 32px;
+        }
+        .tablet-base {
+            margin-top: 30px;
+            overflow: hidden;
+            height: 1px;
+        }
+        .tablet-rail4 {
+            display: block;
+            margin: 40px 0;
+            height: 4px;
+            background-color:#000;
+            overflow: hidden;
+            border: 0;
+            .opacity(.2);
+        }
+
+        .responsive-type {
+            .greek(alpha,'Trade Gothic W01 Bold 2',47px,47px,-1px,optimizeLegibility);
+            .greek(beta,'Trade Gothic W01 Bold 2',37px,39px,0,optimizeLegibility);
+        }  
+
+        .tablet-container {
+           padding-left: @responsive-offset;
+           padding-right: @responsive-offset;
+           clear:left;
+        }
+
+
+        .container { .grid-framework .container-none;}
+        .row        { .grid-framework .row-none; }
+        .row > .span1 { .grid-framework .row-none .span-none; }
+        .row > .span2 { .grid-framework .row-none .span-none; }
+        .row > .span3 { .grid-framework .row-none .span-none; }
+        .row > .span4 { .grid-framework .row-none .span-none; }
+        .row > .span5 { .grid-framework .row-none .span-none; }
+        .row > .span6 { .grid-framework .row-none .span-none; }
+        .row > .span7 { .grid-framework .row-none .span-none; }
+        .row > .span8 { .grid-framework .row-none .span-none; }
+        .row > .span9 { .grid-framework .row-none .span-none; }
+        .row > .span10 { .grid-framework .row-none .span-none; }
+        .row > .span11 { .grid-framework .row-none .span-none; }
+        .row > .span12 { .grid-framework .row-none .span-none; }
+
+        .row .tablet-clear { clear: left; margin-left: 0; }
+
+        .responsive-site-header();
+        .responsive-media(); 
+        
+
+
+        .tablet-row    { .grid-framework .fluidrow();}
+        .tablet-row {
+            .tablet-span1 { .grid-framework .row-fluid .span1; }
+            .tablet-span2 { .grid-framework .row-fluid .span2; }
+            .tablet-span3 { .grid-framework .row-fluid .span3; }
+            .tablet-span4 { .grid-framework .row-fluid .span4; }
+            .tablet-span5 { .grid-framework .row-fluid .span5; }
+            .tablet-span6 { .grid-framework .row-fluid .span6; }
+            .tablet-span7 { .grid-framework .row-fluid .span7; }
+            .tablet-span8 { .grid-framework .row-fluid .span8; }
+            .tablet-span9 { .grid-framework .row-fluid .span9; }
+            .tablet-span10 { .grid-framework .row-fluid .span10; }
+            .tablet-span11 { .grid-framework .row-fluid .span11; }
+            .tablet-span12 { .grid-framework .row-fluid .span12; }
+        }
+        
+       
+        .tablet-hr2 {
+           height: 2px;
+           background-color: silver;
+           margin-top: 24px;
+           margin-bottom: 24px;
+        }
+        .tablet-hr4 {
+           .tablet-hr2;
+           height: 4px; 
+        }
+
+
+    
+        .vrule-offset.span4,
+        .vrule-offset {
+           .grid-framework .vrule-offset-mixin(0px);        
+        }
+
+
+        .vrule1,.vrule2,.vrule3,.vrule4,.vrule5,
+        .vrule6,.vrule7,.vrule8,.vrule9,.vrule10,
+        .vrule11,.vrule1h,.vrule2h,.vrule3h,.vrule4h,
+        .vrule5h,.vrule6h,.vrule7h,.vrule8h,.vrule9h,
+        .vrule10h,.vrule11h {background: none;}
+
+        .tablet-vrule4h {
+          background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+          background-repeat: repeat-y;
+          background-position: 32.91489362% 0;
+        } 
+        .tablet-vrule8h {
+          background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+          background-repeat: repeat-y;
+          background-position: 67.10510638297872% 0;
+        } 
+
+        .tablet-vrule8 {
+          background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+          background-repeat: repeat-y;
+          //background-position: 65.95744680851064% 0;
+          background-position: 67.30510638297872% 0;
+        } 
+
+        .tablet-vrule8 .vrule-offset {
+            .grid-framework .vrule-offset-mixin(15px);
+        }
+        .page-header .tablet-vrule8 {
+          background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+          background-repeat: no-repeat;
+          background-position: 65.95744680851064% 82px;
+        }
+
+
+
+    }
+}
+

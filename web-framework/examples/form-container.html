@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../dist/css/framework.css"/>
+  <script type="text/javascript" src="../dist/js/framework.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+
+jQuery(function($){
+   
+   $("#inquireform").submit(function(event){
+     if ($(".only-one input:checked",this).length != 1) {
+        $(".only-one",this).addClass('field-group-error');
+        $(".only-one .field",this).addClass('field-error');
+        $(".only-one .error-msg",this).show();
+        event.preventDefault();
+     } else {
+        $(".only-one",this).removeClass('field-group-error');
+        $(".only-one .field",this).removeClass('field-error');
+        $(".only-one .error-msg",this).hide();
+     }
+   });
+   
+})
+
+</script>
+
+
+</head>
+
+<body>
+<div class="grid-framework responsive-framework type-framework color-framework pattern-framework component-framework js-framework">
+
+<div class="container">
+<br/>
+<div class="form-container" data-action="http://www.hbs.edu/cgi-bin/env.cgi" data-method="POST" id="inquireform">
+    <div class="field-group-vertical only-one">
+        <label class="kappa">Label</label>
+        <div class="row">
+          <div class="span1"><input type="checkbox" name="testcb"></div>
+          <div class="span3"><input type="text" value="" class="field"></div>
+        </div>
+        <div class="row">
+          <div class="span1"><input type="checkbox" name="testcb"></div>
+          <div class="span3"><input type="text" value="" class="field"></div>
+        </div>
+        <div class="nu error-msg hidden"><b>Error</b> You must have one checkbox selected</div>
+    </div>
+
+    <br/>
+    <p><input type="submit" class="btn-submit" value=".btn-submit"></p>
+</div>
+
+<div class="form-container" data-method="post" data-action="http://hbsapps.hbs.edu/emailForm/process">
+    <input type="hidden" name="openaccess">
+    <input type="hidden" name="s" value="[Leadgen] Preparing Tomorrow's Leaders">
+    <input type="hidden" name="e" value="jgriffith@hbs.edu">
+    <input type="text" class="field" value="test"/>
+
+    <div class="field-select2 field-group-vertical">
+        <select name="thething" class="required" required>
+            <option value="">.field-select2</option>
+            <option value="2">option1</option>
+            <option value="3">option2</option>
+        </select>
+    </div>
+    <input type="submit" class="btn-submit">
+
+
+</div>
+
+
+
+</div>
+</div>
+
+</body>
+</html>

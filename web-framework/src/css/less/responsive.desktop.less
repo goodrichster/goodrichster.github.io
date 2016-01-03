@@ -1,0 +1,165 @@
+
+@media (min-width: @desktop-min-width) and (max-width: 1020px) {
+   .responsive-smalldesktop();
+}
+
+@media (min-width:1021px) {
+   .responsive-desktop();
+}
+        
+.responsive-desktop() {
+    .responsive-framework {
+        .row .desktop-clear{ clear: left;}
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+
+.responsive-smalldesktop() {
+    .responsive-framework {
+        @gutter: 16px;
+        
+        #supernav .main-sites {
+            a {
+                margin: 0 !important;
+                padding-right: 2px !important;
+            }
+        }
+          
+        #supernav .toplinks .wrap, #supernav .school-banner, #supernav .toplinks .wrap, #supernav .sitemap .wrap,
+        .container {
+           width: (60px * 12) + (@gutter * 11);
+        }
+        
+        .row { 
+            margin-left: -@gutter;
+            .clearfix;
+            _display:inline;
+        }
+        .span(@num) {
+            width: (60px * @num) + (@gutter * (@num - 1));
+            float: left;
+            margin-left: @gutter;
+            _display:inline;
+        }
+
+        .span1 {.span(1);}
+        .span2 {.span(2);}
+        .span3 {.span(3);}
+        .span4 {.span(4);}
+        .span5 {.span(5);}
+        .span6 {.span(6);}
+        .span7 {.span(7);}
+        .span8 {.span(8);}
+        .span9 {.span(9);}
+        .span10 {.span(10);}
+        .span11 {.span(11);}
+        .span12 {.span(12);}
+        
+        .row .desktop-clear{ clear: left;}
+
+        .vrule(@num) {
+           background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+           background-repeat: repeat-y;
+           background-position: (60px * @num) + (@gutter * (@num - 1)) + (@gutter) 0;
+        } 
+        .vruleh(@num) {
+           background-image: ~"url('https://d3vgmmrg377kge.cloudfront.net/shared/images/framework/3.0/vertical-rule-bg.png')";
+           background-repeat: repeat-y;
+           background-position: (60px * @num) + (@gutter * (@num - 1)) + (8px) 0;
+        }     
+
+        .vrule1 {.vrule(1);}
+        .vrule2 {.vrule(2);}
+        .vrule3 {.vrule(3);}
+        .vrule4 {.vrule(4);}
+        .vrule5 {.vrule(5);}
+        .vrule6 {.vrule(6);}
+        .vrule7 {.vrule(7);}
+        .vrule8 {.vrule(8);}
+        .vrule9 {.vrule(9);}
+        .vrule10 {.vrule(10);}
+        .vrule11 {.vrule(11);}
+        .vrule1h {.vruleh(1);}
+        .vrule2h {.vruleh(2);}
+        .vrule3h {.vruleh(3);}
+        .vrule4h {.vruleh(4);}
+        .vrule5h {.vruleh(5);}
+        .vrule6h {.vruleh(6);}
+        .vrule7h {.vruleh(7);}
+        .vrule8h {.vruleh(8);}
+        .vrule9h {.vruleh(9);}
+        .vrule10h {.vruleh(10);}
+        .vrule11h {.vruleh(11);}
+
+        .vrule2(@num) {
+           background-repeat: no-repeat;
+           background-position: (60px * @num) + (@gutter * (@num - 1)) + (@gutter) 113px;
+        } 
+        .page-header {
+            .vrule1 {.vrule2(1);}
+            .vrule2 {.vrule2(2);}
+            .vrule3 {.vrule2(3);}
+            .vrule4 {.vrule2(4);}
+            .vrule5 {.vrule2(5);}
+            .vrule6 {.vrule2(6);}
+            .vrule7 {.vrule2(7);}
+            .vrule8 {.vrule2(8);}
+            .vrule9 {.vrule2(9);}
+            .vrule10 {.vrule2(10);}
+            .vrule11 {.vrule2(11);}
+        }
+
+    }
+}
+
+
+
+.xxresponsive-smalldesktop() {
+    .responsive-framework {
+        
+        .container {
+           width: auto;
+           padding: 0 @responsive-offset;
+        }
+        
+        .row   { .grid-framework .row-fluid; }
+        .span1 { .grid-framework .row-fluid .span1; }
+        .span2 { .grid-framework .row-fluid .span2; }
+        .span3 { .grid-framework .row-fluid .span3; }
+        .span4 { .grid-framework .row-fluid .span4; }
+        .span5 { .grid-framework .row-fluid .span5; }
+        .span6 { .grid-framework .row-fluid .span6; }
+        .span7 { .grid-framework .row-fluid .span7; }
+        .span8 { .grid-framework .row-fluid .span8; }
+        .span9 { .grid-framework .row-fluid .span9; }
+        .span10 { .grid-framework .row-fluid .span10; }
+        .span11 { .grid-framework .row-fluid .span11; }
+        .span12 { .grid-framework .row-fluid .span12; }
+        
+        .responsive-splits();
+        
+        .row .desktop-clear { clear: left; margin-left: 0;}
+        
+        
+        // media
+        .span8 .row .span1,
+        .span4 .row .span1 {
+           .grid-framework .span(1);
+           margin-right: 24px;
+           margin-left: 0;
+        }
+        .span4 .row .span3 {
+           width: auto;
+           overflow: hidden;
+           float: none;
+        }       
+        
+        .vrule9 {
+           background-position: 75.72% 0;
+        }
+        .vrule8 {
+           background-position: 68.1% 0;
+        }
+    }
+}

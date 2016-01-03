@@ -1,0 +1,120 @@
+<h1><a class="black section" name="carousel">carousel</a></h1>
+<p>The carousel module activates page carousels.</p>
+<p>Use the <code>.has-shuffle</code> class on the <code>.carousel-container</code> to randomize the first item.</p>
+<p>Use the <code>.has-memory</code> class combined with an <code>id</code> on the <code>.carousel-container</code> to provide memory to the carousel.</p>
+<p>Use the <code>.carousel-nav-minimal</code> on the <code>.carousel-nav</code> remove the arrows.</p>
+<p>Use the <code>.carousel-nav-centered</code> on the <code>.carousel-nav</code> to center the navigation.</p>
+<p>Use the <code>.carousel-panels-fixed-width</code> on the <code>.carousel-panels</code> to force the size of the panels.</p>
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="carousel-container has-shuffle">
+    <ul class="carousel-panels">
+        <li>Fall 2012 Content</li>
+        <li>Winter 2012 Content</li>
+        <li>Fall 2013 Content</li>
+        <li>Winter 2014 Content</li>
+        <li>Fall 2014 Content</li>
+    </ul>
+    <div class="carousel-nav"></div>
+</div>
+</textarea>
+</div>
+<div class="span6 js-framework orange-inherit">
+<h5>results</h5>
+
+<div class="view-src">
+    <div class="carousel-container has-shuffle">
+        <ul class="carousel-panels">
+            <li>Fall 2012 Content</li>
+            <li style="background-color: #faf;height:150px"><a href="http://www.hbs.edu/">Winter 2012 Content</a></li>
+            <li style="height:50px">Fall 2013 Content</li>
+            <li style="background-color: #faf;height:130px">Winter 2014 Content</li>
+            <li style="height:100px">Fall 2014 Content</li>
+        </ul>
+        <div class="carousel-nav"></div>
+    </div>
+</div>
+
+<div class="view-src">
+<div class="orange-inherit">
+<div class="inherit-bg" style="padding:10px">
+    <div class="carousel-container has-memory" id="carousel1">
+        <ul class="carousel-panels">
+            <li>Fall 2012 Content</li>
+            <li style="background-color: #faf;height:150px"><a href="http://www.hbs.edu/">Winter 2012 Content</a></li>
+            <li style="height:50px">Fall 2013 Content</li>
+            <li style="background-color: #faf;height:130px">Winter 2014 Content</li>
+            <li style="height:100px">Fall 2014 Content</li>
+        </ul>
+        <div class="carousel-nav"></div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="view-src">
+<div class="black-bg white" style="padding:10px">
+    <div class="carousel-container carousel-inverted" id="carousel2">
+        <ul class="carousel-panels">
+            <li>Fall 2012 Content  <a href="#" class="carousel-next">next</a></li>
+            <li style="background-color: #faf;height:150px"><a href="http://www.hbs.edu/">Winter 2012 Content</a> <a href="#" class="carousel-next">next</a></li>
+            <li style="height:50px">Fall 2013 Content <a href="#" class="carousel-next">next</a></li>
+            <li style="background-color: #faf;height:130px">Winter 2014 Content <a href="#" class="carousel-next">next</a></li>
+            <li style="height:100px">Fall 2014 Content <a href="#" class="carousel-prev">prev</a></li>
+        </ul>
+        <div class="carousel-nav"></div>
+    </div>
+</div>
+</div>
+
+
+
+<br/>
+<div class="view-src">
+<div class="carousel-container">
+    <ul class="carousel-panels carousel-panels-fixed-width">
+        <li class="orange-bg" style="width:200px">max-width:200px</li>
+        <li style="background-color: #faf;height:150px;width:300px">max-width:300px</li>
+        <li style="height:50px;width:400px">max-width:400px</li>
+        <li style="background-color: #faf;height:130px">max-width:none</li>
+        <li style="height:100px;width:200px">max-width:200px</li>
+    </ul>
+    <div class="carousel-nav carousel-nav-minimal carousel-nav-centered"></div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+   test("carousel", function() {
+     var t = $(".carousel-container").eq(0);
+     var first = $(".carousel-nav .dot a",t).eq(0);
+     var firstp = $(".carousel-panels > li",t).eq(0);
+     var second = $(".carousel-nav .dot a",t).eq(1);
+     var secondp = firstp.next();
+     first.click();
+     ok(first.parent().hasClass('active'),'first panel is selected');
+     ok(!second.parent().hasClass('active'),'second panel is not selected');
+     second.click();
+     ok(!first.parent().hasClass('active'),'first panel is not selected');
+     ok(second.parent().hasClass('active'),'second panel is selected');
+     first.click();
+   });
+
+});
+</script>
+
+
+

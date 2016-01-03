@@ -1,0 +1,48 @@
+<h1><a class="black section" name="links">links</a></h1>
+<p>Link controller for standard PDF and new window behaviors.</p>
+
+<div class="row" id="links-test">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="link-controller">
+   <a href="test.pdf">PDF Link</a>
+</div>
+</textarea>
+</div>
+<div class="span6 orange-inherit">
+<h5>results</h5>
+<div class="js-framework view-src">
+    <div class="link-controller">
+       <a href="test.pdf">PDF Link</a><br/>
+       <a href="http://www.google.com/">Offsite Link</a><br/>
+       <a href="http://www.google.com/" class="protected">Protected Link</a><br/>
+    </div>
+</div>
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+-->
+<script type="text/javascript">
+require(['framework/links','domready!'],function(links){
+
+   test("links", function() {
+     var h = '<a href="http://www.google.com/" id="google">Offsite Link</a>';
+     h += '<a href="http://www.hbs.edu/" id="hbs">HBS</a>';
+     h += '<a href="test.pdf" id="pdf">PDF Link</a>';
+     var t = $('<div>'+h+'</div>');
+     links(t);
+     ok($("#google",t).hasClass("ext"),'external link is marked');
+     ok($("#pdf",t).hasClass("pdf"),'pdf link is marked');
+     ok($("#hbs",t).hasClass("ext") == false,'external link is not marked');
+   });
+     
+});
+</script>
+
+
+

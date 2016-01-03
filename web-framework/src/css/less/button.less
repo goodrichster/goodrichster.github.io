@@ -1,0 +1,420 @@
+.component-framework {
+
+/*------------------
+  Buttons
+  1. http://forrst.com/posts/Make_font_face_and_button_behave_nicely_toget-hTH
+  ------------------*/
+
+.btn {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 8px 17px; 
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -webkit-font-smoothing: antialiased; //1
+  .transition(background 0.1s linear);
+  
+  // mozilla is off by 2 pixels
+  &::-moz-focus-inner {
+     padding: 2px !important;
+     border: 0 none !important;
+  }
+   
+}
+
+.btn.teal-bg {background-color: @teal;}
+.btn.salmon-bg {background-color: @salmon;}
+.btn.coral-bg {background-color: @coral;}
+.btn.yellowgreen-bg {background-color: @yellowgreen;}
+.btn.orange-bg {background-color: @orange;}
+.btn.skyblue-bg {background-color: @skyblue;}
+.btn.peach-bg {background-color: @peach;}
+.btn.steelblue-bg {background-color: @steelblue;}
+.btn.hbsred-bg {background-color: @hbsred;}
+.btn.silver-bg {background-color: @silver;}
+
+.btn.steelblue-bg:hover,
+.btn.peach-bg:hover,
+.btn.skyblue-bg:hover,
+.btn.orange-bg:hover,
+.btn.yellowgreen-bg:hover,
+.btn.coral-bg:hover,
+.btn.salmon-bg:hover,
+.btn.hbsred-bg:hover,
+.btn.silver-bg:hover,
+.btn.teal-bg:hover {background-color: @ink !important;}
+
+.btn.ink:hover {color: white !important}
+
+
+.btn:hover {
+  background-color: @hbsred;
+  text-decoration: none;
+}
+
+.btn-unstyled {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -webkit-font-smoothing: antialiased; 
+}
+
+
+/*
+ 1. http://forrst.com/posts/Make_font_face_and_button_behave_nicely_toget-hTH
+*/
+.btn-arrow {
+    position: relative;
+    color: white;
+    white-space: nowrap;
+    display:inline-block;
+    border: 0;
+    line-height:32px;
+    padding: 0 17px;
+    cursor: pointer;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -webkit-font-smoothing: antialiased; //1
+   .transition(background 0.1s linear);
+}
+
+
+.btn-left > span,
+.btn-right > span,
+.btn-arrow .left,
+.btn-arrow .right {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 16px;
+    top: 50%;
+    margin-top: -16px;
+   .transition(border-color 0.1s linear);
+}
+
+.btn-arrow:hover {
+  text-decoration: none;
+}
+
+
+.btn-right > span,
+.btn-arrow .right {
+    left: 100%;
+}
+
+.btn-left > span,
+.btn-arrow .left {
+    right: 100%;
+}
+
+// default colors
+
+.btn-arrow {    background-color: black;}
+.btn-arrow:hover, .btn-arrow.hover {    background-color: @hbsred; }
+.btn-arrow .right, .btn-right > span {    border-left-color: black;}
+.btn-arrow .left, .btn-left > span {    border-right-color: black;}
+.btn-arrow:hover .right, .btn-arrow.hover .right,
+.btn-right:hover > span, btn-right.hover > span { border-left-color: @hbsred;}
+.btn-arrow:hover .left, .btn-arrow.hover .left,
+.btn-left:hover > span, btn-left.hover > span { border-right-color: @hbsred;}
+
+
+
+
+
+// teal
+.teal-inherit .btn-arrow.inherit-bg span { border-left-color: @teal;}
+.teal-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.btn-arrow.teal-bg {    background: @teal;}
+.btn-arrow.teal-bg .right, .btn-arrow.teal-bg.btn-right > span {    border-left-color: @teal;}
+.btn-arrow.teal-bg .left, .btn-arrow.teal-bg.btn-left > span {    border-right-color: @teal;}
+.btn-arrow.teal-bg:hover .left, .btn-arrow.teal-bg.hover .left, .btn-arrow.teal-bg.btn-left:hover > span {  border-right-color: black;}
+.btn-arrow.teal-bg:hover .right, .btn-arrow.teal-bg.hover .right, .btn-arrow.teal-bg.btn-right:hover > span { border-left-color: black;}
+.btn-arrow.teal-bg:hover, .btn-arrow.teal-bg.hover{ background-color: black !important; }
+
+// hbsred
+.hbsred-inherit .btn-arrow.inherit-bg span { border-left-color: @hbsred;}
+.hbsred-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.btn-arrow.hbsred-bg {    background-color: @hbsred;}
+.btn-arrow.hbsred-bg .right {    border-left-color: @hbsred;}
+.btn-arrow.hbsred-bg .left {    border-right-color: @hbsred;}
+.btn-arrow.hbsred-bg:hover .left,.btn-arrow.hbsred-bg.hover .left {    border-right-color: black !important;}
+.btn-arrow.hbsred-bg:hover .right,.btn-arrow.hbsred-bg.hover .right {    border-left-color: black !important;}
+.btn-arrow.hbsred-bg:hover, .btn-arrow.hbsred-bg.hover { background-color: black !important; }
+
+// yellowgreen
+.yellowgreen-inherit .btn-arrow.inherit-bg span { border-left-color: @yellowgreen;}
+.yellowgreen-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.btn-arrow.yellowgreen-bg {    background: @yellowgreen;}
+.btn-arrow.yellowgreen-bg .right, .btn-arrow.yellowgreen-bg.btn-right > span {    border-left-color: @yellowgreen;}
+.btn-arrow.yellowgreen-bg .left, .btn-arrow.yellowgreen-bg.btn-left > span {    border-right-color: @yellowgreen;}
+.btn-arrow.yellowgreen-bg:hover .left,.btn-arrow.yellowgreen-bg.hover .left {    border-right-color: black;}
+.btn-arrow.yellowgreen-bg:hover .right,.btn-arrow.yellowgreen-bg.hover .right {    border-left-color: black;}
+.btn-arrow.yellowgreen-bg:hover, .btn-arrow.yellowgreen-bg.hover { background-color: black !important; }
+
+// orange
+.orange-inherit .btn-arrow.inherit-bg span { border-left-color: @orange;}
+.orange-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.btn-arrow.orange-bg {    background: @orange;}
+.btn-arrow.orange-bg .right {    border-left-color: @orange;}
+.btn-arrow.orange-bg .left {    border-right-color: @orange;}
+.btn-arrow.orange-bg:hover .left,.btn-arrow.orange-bg.hover .left {    border-right-color: black;}
+.btn-arrow.orange-bg:hover .right,.btn-arrow.orange-bg.hover .right {    border-left-color: black;}
+.btn-arrow.orange-bg:hover, .btn-arrow.orange-bg.hover { background-color: black !important; }
+
+// coral
+.coral-inherit .btn-arrow.inherit-bg span { border-left-color: @coral;}
+.coral-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.btn-arrow.coral-bg {    background: @coral;}
+.btn-arrow.coral-bg .right {    border-left-color: @coral;}
+.btn-arrow.coral-bg .left {    border-right-color: @coral;}
+.btn-arrow.coral-bg:hover .left,.btn-arrow.coral-bg.hover .left {    border-right-color: black;}
+.btn-arrow.coral-bg:hover .right,.btn-arrow.coral-bg.hover .right {    border-left-color: black;}
+.btn-arrow.coral-bg:hover, .btn-arrow.coral-bg.hover { background-color: black !important; } 
+
+// inherit
+.salmon-inherit .btn-arrow.inherit-bg>span { border-left-color: @salmon;}
+.salmon-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.salmon-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @salmon;}
+.salmon-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.coral-inherit .btn-arrow.inherit-bg>span { border-left-color: @coral;}
+.coral-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.coral-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @coral;}
+.coral-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.steelblue-inherit .btn-arrow.inherit-bg>span { border-left-color: @steelblue;}
+.steelblue-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.steelblue-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @steelblue;}
+.steelblue-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.orange-inherit .btn-arrow.inherit-bg>span { border-left-color: @orange;}
+.orange-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.orange-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @orange;}
+.orange-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.yellowgreen-inherit .btn-arrow.inherit-bg>span { border-left-color: @yellowgreen;}
+.yellowgreen-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.yellowgreen-inherit .btn-arrow.inherit-bg.btn-right { border-left-color: @yellowgreen;}
+.yellowgreen-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.skyblue-inherit .btn-arrow.inherit-bg>span { border-left-color: @skyblue;}
+.skyblue-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.skyblue-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @skyblue;}
+.skyblue-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.peach-inherit .btn-arrow.inherit-bg>span { border-left-color: @peach;}
+.peach-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.peach-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @peach;}
+.peach-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.silver-inherit .btn-arrow.inherit-bg>span { border-left-color: @silver;}
+.silver-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+.silver-inherit .btn-arrow.inherit-bg.btn-right span { border-left-color: @silver;}
+.silver-inherit .btn-arrow.inherit-bg.btn-right:hover span { border-left-color: black;}
+
+.btn-arrow.inherit-bg:hover .left,.btn-arrow.inherit-bg.hover .left {    border-right-color: black;}
+.btn-arrow.inherit-bg:hover .right,.btn-arrow.inherit-bg.hover .right {    border-left-color: black;}
+.btn-arrow.inherit-bg:hover, .btn-arrow.inherit-bg.hover{    background-color: black !important; }
+
+.inherit-bg {
+  .btn-arrow:hover, .btn-arrow.hover {color: black; background-color: white !important; }
+  .btn-arrow:hover .right, .btn-arrow.hover .right,
+  .btn-right:hover > span, btn-right.hover > span { border-left-color: white;}
+  .btn-arrow:hover .left, .btn-arrow.hover .left,
+  .btn-left:hover > span, btn-left.hover > span { border-right-color: white;}
+}
+
+.inherit-bg .btn:hover,
+.btn.btn-white-bg-onhover:hover, 
+.btn-arrow.btn-white-bg-onhover:hover { background-color: white !important; color: black ;}
+
+.inherit-bg .btn-arrow.btn-large.btn-right:hover > span,
+.btn-arrow.btn-large.btn-right.btn-white-bg-onhover:hover > span { border-left-color: white !important; }
+
+.btn-white-bg-onhover.btn-right:hover > span, 
+.btn-white-bg-onhover.btn-right.hover > span, 
+.btn-arrow.btn-white-bg-onhover:hover .right, 
+.btn-arrow.btn-white-bg-onhover.hover > .right, 
+{ border-left-color: white;}
+
+.btn-white-bg-onhover.btn-left:hover > span, 
+.btn-white-bg-onhover.btn-left.hover > span,
+.btn-arrow.btn-white-bg-onhover:hover .left, 
+.btn-arrow.btn-white-bg-onhover.hover .left, 
+{ border-right-color: white}
+
+.txt-arrow{
+ font-family: "Lucida Grande", "Lucida xConsole", "Lucida Sans", Arial, sans-serif;
+}
+
+.btn-large {
+    font-size: 23px;
+    line-height: 38px;
+    padding: 5px 20px;
+} 
+
+.btn-large.btn-right {
+    padding-right: 12px;
+}
+.btn-large.btn-left {
+    padding-left: 12px;
+}
+
+.btn-large.btn-right > span,
+.btn-large.btn-left > span {
+    border-width: 24px;
+    margin-top: -24px;
+}
+
+.btn-close {
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    line-height: 20px;
+    -webkit-appearance: none;
+}
+
+// ---------------------
+// Circle Buttons
+// ---------------------
+
+.btn-circle60 {
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   border-radius: 50%;
+   -webkit-transition:background-color 0.1s linear;
+   -moz-transition:background-color 0.1s linear;
+   -o-transition:background-color 0.1s linear;
+   transition:background-color 0.1s linear;
+   display: inline-block;
+   height:60px;
+   width:60px;
+}
+
+.btn-circle60 [class^="icon42-"] {
+   margin: 0 auto;
+   display: block;
+   margin-top: 9px;
+}
+
+
+// ---------------------
+// Hidden and Revealed buttons
+// ---------------------
+
+.btn-reveal {
+   display: inline-block;
+   white-space: nowrap;
+   padding: 8px 12px; 
+   border: 0;
+   margin: 0;
+   cursor: pointer;
+   -webkit-appearance: none;
+   -webkit-border-radius: 0;
+   -webkit-font-smoothing: antialiased; //1
+   border: 1px solid transparent;
+   text-decoration: none;
+   transition: border-color .1s linear;
+
+}
+
+.btn-reveal:hover { 
+   border: 1px solid #eee;
+}
+
+.btn-reveal.active,
+.btn-reveal:active { 
+   border: 1px solid #ccc;
+   xbox-shadow: inset 0 3px 6px rgba(0,0,0,0.1)
+}
+
+
+
+// ---------------------
+// Button Bar
+// ---------------------
+
+.btn-bar {
+    display: block;
+    padding: 8px 16px;
+    cursor: pointer;
+    clear: both;
+
+    a {
+        text-decoration: none;
+    }
+
+    .icon-collapse2,
+    .icon-expand2 {
+        margin-right: 5px;
+        margin-top: 6px;
+        margin-left: 10px;
+        float: right;
+    }
+    .icon-x {
+        float: right;
+    }
+}
+
+.container .btn-bar,
+.tablet-container .btn-bar,
+.mobile-container .btn-bar {
+   padding-left: 0;
+   padding-right: 0;
+}
+
+button.btn-bar {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+
+
+
+    .btn-glass {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        height: 33px;
+        background: none;
+        outline: none;
+        padding-top: 4px;
+        padding-left: 2px;
+        padding-right: 2px;
+        overflow: hidden;
+        min-width: 33px;
+        box-sizing: border-box;
+        text-align: center;
+        @media (max-width: @mobile-max-width) {
+            padding-top: 0;
+            padding: 0;
+            height: 26px;
+            min-width: 26px;
+        }
+        @media (min-width: @tablet-min-width) {
+            padding-top: 1px !important;
+        }
+    }
+
+
+
+
+
+
+}

@@ -1,0 +1,71 @@
+
+.pattern-framework .universal-header-v3 { 
+    .universal-site-search-button {
+        border:none;
+        width:31px;
+        height:31px;
+        background:#a41034;
+        background-image: ~"url('../images/framework/3.0/framework.png')";
+        background-position:-72px -135px;
+        font-size:0;
+        line-height:75px;cursor:pointer;
+        float:left;
+        -webkit-border-radius:0;border-radius:0;
+    }
+    .search-box fieldset.input .universal-site-search-query{
+        font: normal 17px/24px 'Trade Gothic W01 Roman',Arial,Helvetica,Verdana,sans-serif;
+        width:262px;
+        height:21px;
+        background:#fff;
+        border:none;
+        float:left;
+        padding:5px 2px 5px 5px;    
+        -webkit-appearance:none;
+        -webkit-border-radius:0;
+    }
+    .search-box { 
+        float:right; 
+        margin:16px 0 0 0; 
+    }
+}
+
+/* Tablet */
+@media only screen and (max-width:@tablet-max-width){
+    
+        .universal-header-v3 {
+            .black-bg{
+                height: 39px;
+            }
+            .universal-banner-logo {
+                background-position: 0px -247px;
+                background-size: 515px 396px; /* will need to recalculate y if sprite changes height */ 
+                top: 0;
+                height: 55px;
+                a {
+                     height: 37px;
+                     width: 370px;
+                }
+            }
+            .search-box {display:none;}
+        }
+
+}
+
+/* mobile */
+@media only screen and (max-width:@mobile-max-width){
+        .responsive-framework .universal-header-v3 {
+            .universal-banner-logo {
+                background-position: 2px -199px; /* */
+                background-size: 415px 320px; /* will need to recalculate y if sprite changes height */ 
+                top: 1px;
+                margin-left: -6px;
+                a {
+                     height: 30px;
+                     width: 100%;   
+                }
+             }
+             .black-bg {
+                height: 32px;
+             }  
+       }
+}

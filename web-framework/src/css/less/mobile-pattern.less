@@ -1,0 +1,97 @@
+.pattern-framework {
+
+    .mobile-page-header {
+   
+        .mobile-breadcrumb {
+            padding-top: 8px;
+            a {
+                padding: 8px 0;
+            }
+        }
+   
+        .mobile-page-title {
+            display: block;
+            padding: 8px 0;
+            &:hover {
+                background-color: transparent;
+            }
+            .icon-expand2 {
+                margin-right: 5px;
+                margin-top: 4px;
+                margin-left: 10px;
+                float: right;
+            }
+        }
+      
+        .mobile-local-navigation {
+            padding: 8px 0;
+            .btn {
+                float: right;
+                padding: 0;
+                margin-right: -2px;
+                margin-top: -2px;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            ul {
+                margin-top: 10px;
+            }
+        }
+
+    }
+}
+
+.mobile-accordion() {
+    .mobile-accordion {
+        border-bottom: 2px solid #d6d6d6;
+
+        .mobile-accordion-header:first-child {
+            margin-top: 0;
+        }
+
+        .mobile-accordion-header {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            border-top: 2px solid #d6d6d6;
+            //margin-top: 6px;
+            cursor: pointer;
+            .icon-plusbox {
+                margin-right: 12px;
+                margin-top: 10px;
+                margin-left: 10px;
+                float: left;
+            }
+            .icon-expand2 {
+                margin-right: 5px;
+                margin-top: 6px;
+                margin-left: 10px;
+                float: right;
+                -webkit-transition: all 0.3s ease;                  
+                -moz-transition: all 0.3s ease;                 
+                -o-transition: all 0.3s ease;   
+                -ms-transition: all 0.3s ease;          
+                transition: all 0.3s ease;
+            }
+        }
+        .mobile-accordion-header-plusminus {
+            background-color: #d6d6d6;
+            border-top: 2px solid white;
+        }
+        .mobile-accordion-header-plusminus.mobile-accordion-header-active {
+            background-color: #fff;
+            color: @teal;
+        }
+        .mobile-accordion-header-active .icon-expand2 {
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+
+        .mobile-accordion-body {
+            display: none;
+        }
+
+    }
+}
+   

@@ -1,0 +1,50 @@
+<h1><a class="black section" name="lazy">lazy / defer / ondemand img</a></h1>
+<p>lazy load images or defer them until page load</p>
+<p>to hand trigger an image to appear use: <code>$("img").trigger("appear")</code></p>
+<div class="row" id="lazy-test">
+<div class="span8">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+
+// load when the user scrolls to image
+
+<img class="lazy" height="197" width="313"
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+data-src="http://www.hbs.edu/mba/PublishingImages/assets/ann-chao312x197.jpg" />
+
+// load when the page loads
+
+<img class="defer" height="197" width="313"
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+data-src="http://www.hbs.edu/mba/PublishingImages/assets/ann-chao312x197.jpg" />
+
+// load when the .trigger('appear') event is fired
+
+<img class="ondemand" height="197" width="313"
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+data-src="http://www.hbs.edu/mba/PublishingImages/assets/ann-chao312x197.jpg" />
+
+</textarea>
+</div>
+<div class="span4 orange-inherit">
+<h5>results</h5>
+<div class="view-src">
+<div class="js-framework">
+    <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" height="197" width="313"
+    data-src="http://www.hbs.edu/mba/PublishingImages/assets/ann-chao312x197.jpg" />
+
+    <img class="defer" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" height="197" width="313"
+    data-src="http://cdnbakmi.kaltura.com/p/1423662/sp/142366200/thumbnail/entry_id/1_lesysx7q/width/320/height/180" />
+
+    <img class="ondemand" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" height="197" width="313"
+    data-src="http://cdnbakmi.kaltura.com/p/1423662/sp/142366200/thumbnail/entry_id/1_lesysx7q/width/320/height/180" />
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+

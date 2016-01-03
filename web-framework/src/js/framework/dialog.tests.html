@@ -1,0 +1,92 @@
+<h1><a class="black section" name="toggle">toggle</a></h1>
+<p>Toggle components, </p>
+
+<div class="row" id="toggle-test">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+
+<div class="toggle-container">
+    <div class="toggle-hide has-slide">Hide Me</div>
+    <div class="toggle-show has-slide">Show Me</div>
+    <div><a href="#" class="toggle-button">Click Me</a></div>
+</div>
+
+
+<div class="toggle-container has-memory" id="toggle1">
+    <div class="toggle-hide">Hide Me</div>
+    <div class="toggle-show">Show Me</div>
+    <div><a href="#" class="toggle-button">Click Me</a></div>
+</div>
+
+</textarea>
+</div>
+<div class="span6 ">
+<h5>results</h5>
+<div class="js-framework">
+    
+    <b>A toggle with no memory</b>
+    <div class="view-src">
+        <div class="toggle-container">
+            <div class="toggle-hide">Hide Me</div>
+            <div class="toggle-show">Show Me</div>
+            <div><a href="#" class="toggle-button">Click Me</a></div>
+        </div>
+    </div>
+
+    <b>A toggle with slide</b>
+        <div class="view-src">
+        <div class="toggle-container">
+            <div><a href="#" class="toggle-button">Click Me</a></div>
+            <div class="toggle-show has-slide">Show<br/>Me</div>
+        </div>
+        </div>
+    
+
+    <b>A toggle with memory</b>
+        <div class="view-src">
+        <div class="toggle-container has-memory" id="toggle1">
+            <div class="toggle-hide">plus</div>
+            <div class="toggle-show">minus</div>
+            <div><a href="#" class="toggle-button">Click Me</a></div>
+        </div>
+        </div>
+     
+
+    <b>Nested Toggle Containers</b>
+        <div class="view-src">
+        <div class="toggle-container a-top">
+            <div><a href="#" class="toggle-button">Click Me</a></div>
+
+            <div class="toggle-show">
+                <div class="toggle-container a-next">
+                    <div><a href="#" class="toggle-button">Click Me 2</a></div>
+                    <div class="toggle-show">Show Me 2</div>
+                </div>
+            
+            </div>
+        </div>
+        </div>
+    
+    <b>Toggle with two targets</b>
+        <div class="view-src">
+        <div class="toggle-container a-top">
+            <div><a href="#item1" class="toggle-button">Click Me</a> <a href="#item2" class="toggle-button">Click Me</a></div>
+
+            <div class="toggle-show" id="item1">
+            Item 1
+            </div>
+            <div class="toggle-show" id="item2">
+            Item 2
+            </div>
+        </div>
+        </div>
+    
+    
+</div>
+</div>
+</div>
+
+
+
+

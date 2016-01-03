@@ -1,0 +1,112 @@
+
+.pattern-framework {
+
+
+.twitter-stream {
+
+  .widget-twitter-stream-noresults,
+  .widget-twitter-stream-loading,
+  .widget-twitter-stream { display: none;}
+
+  // this is probably not in use and can be removed
+  ul.tweets {
+    .unstyled-list();
+
+     li.tweet {
+        .linear {
+           margin-bottom: 3px;
+        }
+     }
+      
+     .icon-expand {
+         margin-right: 3px;
+     }
+      
+  }
+  
+  .tweet-list {
+     .more-tweets {
+         a:hover {
+            color: black;
+         }
+         .icon-expand-large {
+              margin-right: 3px;
+              position: relative;
+         }
+
+     }
+        
+     .tweet {
+        margin-bottom: 24px;
+        .tweet-timeago {
+          display: none;
+          // leave this for local css hooks to display
+        }
+        .tweet-byline {
+          padding-top: 4px;
+          margin-bottom: 10px;
+        }
+        .tweet-text {
+          margin-bottom: 10px;
+          overflow: hidden; // for long urls
+        }
+        .tweet-timestamp {
+          margin-bottom: 12px;
+        }
+        .tweet-follow {
+          margin-bottom: 10px;
+        }
+        .tweet-pic {
+          margin-bottom: 8px;
+        }
+
+        .tweet-actions {
+          
+          .icon-twitter-reply {
+             margin-right: 16px;
+             margin-left: -4px;
+             margin-top: 1px;
+             .opacity(.6);
+             .transition(opacity .2s linear);
+          }
+          .icon-twitter-reply:hover {
+             .opacity(1);
+          }
+          .icon-twitter-retweet {
+             margin-right: 18px;
+             .opacity(.6);
+             .transition(opacity .2s linear);
+          }
+          .icon-twitter-retweet:hover {
+             .opacity(1);
+          }
+          .icon-twitter-favorite {
+             margin-bottom: 1px;
+             .opacity(.6);
+             .transition(opacity .2s linear);
+          }
+          .icon-twitter-favorite:hover {
+             .opacity(1);
+          }
+        }
+     }
+
+    .twitter-hover-container .hover-opacity {
+      .opacity(0);
+      text-indent: -10000px;
+      .transition(opacity 0.2s linear);
+    }
+
+    .twitter-hover-container.hover .hover-opacity {
+      text-indent: 0px;
+      .opacity(1);
+    }
+
+
+  }
+  
+  
+
+}
+
+}

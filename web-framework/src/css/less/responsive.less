@@ -1,0 +1,186 @@
+@responsive-offset:16px;
+
+.grid-framework {
+    .hidden { display: none }
+    .invisible { visibility: hidden; }
+    .print-visible    { display: none; }
+    .print-hidden     { }
+    .mobile-visible     { display: none;}
+    .tablet-visible    { display: none; }
+    .mobile-hidden      { }
+    .tablet-hidden     { }
+    .desktop-hidden    { display: none; }
+    .desktop-visible   { display: inherit; }
+}
+
+@media screen and (max-width: 919px) {
+   .responsive-base();
+}
+
+@media screen and (min-width: 1300px) {
+
+    .wide-span(@num) {
+        width: (68px * @num) + (30px * (@num - 1));
+        float: left;
+        margin-left: 30px;
+        _display:inline;
+    }
+
+    .responsive-framework {
+        .wide-container {
+            width: 1152px; 
+            .row { margin-left: -30px;}
+            .row > .span1 {.wide-span(1);}
+            .row > .span2 {.wide-span(2);}
+            .row > .span3 {.wide-span(3);}            
+            .row > .span4 {.wide-span(4);}
+            .row > .span5 {.wide-span(5);}
+            .row > .span6 {.wide-span(6);}
+            .row > .span7 {.wide-span(7);}
+            .row > .span8 {.wide-span(8);}
+            .row > .span9 {.wide-span(9);}
+            .row > .span10 {.wide-span(10);}
+            .row > .span11 {.wide-span(11);}
+            .row > .span12 {.wide-span(12);}
+        }
+    }
+}
+
+.responsive-splits(){
+
+    // 50% splits
+    .span6 .row .span3 { .grid-framework .row-fluid .span6; }
+    .span8 .row .span4 { .grid-framework .row-fluid .span6; }
+    
+    // 33% splits
+    .span8 .row .span5 { .grid-framework .row-fluid .span8; }
+    .span8 .row .span3 { .grid-framework .row-fluid .span4; }
+    .span9 .span3 { .grid-framework .row-fluid .span4; }
+    .span9 .span6 { .grid-framework .row-fluid .span8; }
+    
+    // break lines
+    .span12 .row .span12,
+    .span11 .row .span11,
+    .span10 .row .span10,
+    .span9 .row .span9,
+    .span8 .row .span8,
+    .span7 .row .span7,
+    .span6 .row .span6,
+    .span5 .row .span5,
+    .span4 .row .span4,
+    .span3 .row .span3,
+    .span4 .row .span2 {
+       .grid-framework .row-fluid .span12;
+       margin-left: 0;
+    }
+    
+}
+
+
+.responsive-media(){
+     .responsive-media {
+        clear: left;
+     
+        .responsive-media-thumbnail { width:60px; float: left;  margin-right: 12px; }
+        .responsive-media-body { 
+           width: auto;
+           overflow: hidden;
+           float: none;
+        }
+        .event-thumbnail {
+            position: static;
+            margin-bottom: 24px;
+        }
+     }
+        
+}
+
+.responsive-base(){
+
+   // do this even if we aren't in a responsive-framework
+  
+   //.color-framework {float: left !important;}
+   //.universal-banner .color-framework {float: none !important;}
+   
+   .container .container {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+   }  
+
+   img, canvas, iframe, svg { max-width: 100%; }
+   .overflow-container { overflow-y: scroll; }
+   
+   #superfooter div.bar { 
+     max-width: 956px !important;
+     width: auto !important; 
+   }
+
+   #supernav { width: 984px !important; }
+   #s4-statusbarcontainer,
+   #s4-ribbonrow,
+   .s4-clust {display: none !important;}
+   #s4-workspace {overflow-y: visible !important;height: auto !important;}
+   //body {overflow-y: auto;}
+   body #s4-bodyContainer {min-width: 0;}
+   body {overflow: auto;}
+
+
+   
+   .responsive-framework {
+        float: none !important;
+
+        #supernav {
+          width: auto !important;
+          
+          .sitemap .wrap {
+             padding-left: 12px;
+             padding-bottom: 20px;
+          }
+          .main-bar {
+              padding-left: 12px;
+          }
+          
+          .toplinks .wrap, 
+          .school-banner, 
+          .toplinks .wrap, 
+          .sitemap .wrap {
+              width: auto !important;
+          }
+          .school-banner {
+              background-color: transparent;
+          }
+         
+        }
+
+        .ua-touch & a:hover {
+           text-decoration: none;
+        }
+
+        // lists that need to preserve the indentation
+        .ul-outset ul, 
+        ul.outset, 
+        .ol-outset ol, 
+        ol.outset {
+            margin-left: 1em;
+        }
+
+        // lists that should not be indented
+        ol.unstyled,
+        ul.unstyled,
+        .ol-unbulleted ol,
+        .ul-unbulleted ul,
+        ol.unbulleted,
+        ul.unbulleted {
+           margin-left: 0;
+        }
+
+   }
+}
+
+
+
+
+
+
+   
+

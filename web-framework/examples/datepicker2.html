@@ -1,0 +1,64 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="../dist/css/framework.css"/>
+   <script type="text/javascript" src="../dist/js/framework.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+
+jQuery(function($){
+  $(".my-datepicker").addClass('datepicker');
+  $(".my-datepicker").bind('select',function(e,data){
+     console.info(data);
+  })
+  $(".my-datepicker").bind('changeMonthYear',function(e,data){
+     console.info(data);
+  })
+  $(".my-datepicker").bind('beforeShowDay',function(e,data){
+     if (Math.round(Math.random()) == 1) {
+        data.result = [true,'',''];
+     } else {
+        data.result = [false,'',''];
+     }
+  })
+  $(document).trigger('framework.domupdate');
+})
+
+</script>
+
+
+</head>
+<body>
+ 
+<div class="js-framework color-framework component-framework pattern-framework grid-framework type-framework responsive-framework">
+
+
+<br/><br/>
+<div class="orange-inherit container">
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+<div class="datepicker-container">
+   <input type="text" class="field" value="02/07/2012" placeholder="mm/dd/yyyy" data-mask="date" 
+                                    data-minDate="2/3/2012" 
+                                    data-maxDate="2/20/2012"/>
+</div>
+
+<div class="datepicker-container">
+   <input type="text" class="field" value="01/01/2012" placeholder="mm/dd/yyyy" data-mask="date"/>
+</div>
+
+ <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+ <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+</body>
+</html>

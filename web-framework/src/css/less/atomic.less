@@ -1,0 +1,91 @@
+/*! Atomic Framework */ 
+/*
+ *  Classes to flesh-out the atomic pattern of the existing Framework CSS. Generally, one property per selector.
+ *  Ref: 
+ *      - http://www.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach
+ *  Contents:
+ *      - margin, padding
+ *      - font-size, line-height
+ *      - display properties
+ *      - etc
+ *  Naming Convention:
+ *      (mobile|tablet)margin-bottom: 8px = mMb-8
+ *  Contributors:
+ *      - Michael Johnson (mjohnson@hbs.edu)
+ */
+.atomic-framework {
+    
+    .Bs-cb { box-sizing: content-box; }
+    .Bs-bb { box-sizing: border-box; }
+    .Bs-bb *, .Bs-bb *:before, .Bs-bb *:after { box-sizing: inherit; }
+
+    .D-b { display: block; }
+    .D-ib { display: inline-block; }
+    .D-i { display: inline; }
+
+    .F-n { float: none; }
+    .F-start { float: left; } /* Use '-start' and '-end' so makes sense if LTR or RTL */
+    .F-end { float: right; }
+
+    .Va-t { vertical-align: top; }
+    .Va-m { vertical-align: middle; }
+    .Va-b { vertical-align: bottom; }
+    .Va-bl { vertical-align: baseline; }
+
+    .Td-u, .Td-u:link, .Td-u:visited, .Td-u:active { text-decoration: underline; }
+    .Td-n, .Td-n:link, .Td-n:visited, .Td-n:active { text-decoration: none; }
+    .Td-u\:h:hover, .Td-u\:h:visited:hover { text-decoration: underline; }
+    .Td-n\:h:hover, .Td-n\:h:visited:hover { text-decoration: none; }
+ 
+    .Tt-u { text-transform: uppercase; }
+    .Tt-l { text-transform: lowercase; }
+    .Tt-c { text-transform: capitalize; }
+    .Tt-n { text-transform: none; }
+
+    .generate-atomic(60; Fs; font-size);
+    .generate-atomic(60; Lh; line-height);
+
+    .spacing('');
+
+    @media screen and (min-width: @tablet-min-width) and (max-width: @tablet-max-width) {
+        .spacing(t);
+    }
+
+    @media screen and (min-width: @mobile-min-width) and (max-width: @mobile-max-width) {
+        .spacing(m);
+    }
+
+}
+
+.spacing(@r) {
+    .generate-atomic(60; ~'@{r}M'; margin); 
+    .generate-atomic2(60; ~'@{r}Mv'; margin-top; margin-bottom); 
+    .generate-atomic(60; ~'@{r}Mt'; margin-top);
+    .generate-atomic(60; ~'@{r}Mb'; margin-bottom);
+    .generate-atomic2(60; ~'@{r}Mh'; margin-right; margin-left); 
+    .generate-atomic(60; ~'@{r}Mr'; margin-right);
+    .generate-atomic(60; ~'@{r}Ml'; margin-left);
+
+    .generate-atomic(60; ~'@{r}P'; padding); 
+    .generate-atomic2(60; ~'@{r}Pv'; padding-top; padding-bottom); 
+    .generate-atomic(60; ~'@{r}Pt'; padding-top);
+    .generate-atomic(60; ~'@{r}Pb'; padding-bottom);
+    .generate-atomic2(60; ~'@{r}Ph'; padding-right; padding-left); 
+    .generate-atomic(60; ~'@{r}Pr'; padding-right);
+    .generate-atomic(60; ~'@{r}Pl'; padding-left);
+}
+
+.generate-atomic(@n; @c; @p; @i: 0) when (@i =< @n) {
+    .@{c}-@{i} {
+        @{p}: ~'@{i}px';
+    }
+    .generate-atomic(@n; @c; @p; (@i + 1));
+}
+
+.generate-atomic2(@n; @c; @p; @p2; @i: 0) when (@i =< @n) {
+    .@{c}-@{i} {
+        @{p}: ~'@{i}px';
+        @{p2}: ~'@{i}px';
+    }
+    .generate-atomic2(@n; @c; @p; @p2; (@i + 1));
+}

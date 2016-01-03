@@ -1,0 +1,26 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "framework-icons";
+  font-style: normal;
+  font-weight: normal;
+}
+.btn.dropdown-toggle [class^="icon-"],
+.btn.dropdown-toggle [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: 1.4em;
+}
+.icon-large {
+  font-size: 1.3333em;
+}
+
+
+.icon-circle-arrow-left { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf100;&nbsp;');} 
+.icon-combine { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;&nbsp;');} 
+.icon-globe { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf102;&nbsp;');} 
+.icon-lightbulb { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf103;&nbsp;');} 
+.icon-magnify { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;&nbsp;');} 
+.icon-pen { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;&nbsp;');} 
+.icon-pencil { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;&nbsp;');} 
+.icon-people { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;&nbsp;');} 
+.icon-shield { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;&nbsp;');} 

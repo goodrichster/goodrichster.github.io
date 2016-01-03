@@ -1,0 +1,375 @@
+@font-face {
+  font-family: "framework-icons";
+  src: url("../fonts/framework-icons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/framework-icons.woff") format("woff"),
+       url("../fonts/framework-icons.ttf") format("truetype"),
+       url("../fonts/framework-icons.svg#framework-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.component-framework {
+
+   .icon-font {
+     font-family: "framework-icons";
+     cursor: default;
+     -webkit-font-smoothing: antialiased;  
+   }
+
+  
+  [class^="icon-"].fade, [class*=" icon-"].fade {
+      .opacity(0.4); 
+  }
+
+  [class^="icomoon-"], [class*=" icomoon-"] {
+    font-family: 'icomoon' !important;
+  }
+  
+  
+  .icon-circle-arrow-up                { .sprite(20px,20px,0,0);               }
+  .icon-circle-arrow-up-white          { .sprite(20px,20px,25px,0);            }
+  .icon-circle-arrow-up-inverted       { .sprite(20px,20px,0,25px);            }
+  .icon-circle-arrow-up-white-inverted { .sprite(20px,20px,25px,25px);         }
+  
+  .icon-circle-arrow-right             { .sprite(20px,20px,50px,0);            }
+  .icon-circle-arrow-right-inverted    { .sprite(20px,20px,50px,25px);            }
+  .icon-circle-arrow-right-white       { .sprite(20px,20px,75px,0);            }
+  .icon-circle-arrow-right-white-inverted { .sprite(20px,20px,75px,25px);            }
+  
+  .icon-circle-arrow-down              { .sprite(20px,20px,100px,0);           }
+  .icon-circle-arrow-down-inverted     { .sprite(20px,20px,100px,25px);           }  
+  .icon-circle-arrow-down-white        { .sprite(20px,20px,125px,0);           }
+  .icon-circle-arrow-down-white-inverted     { .sprite(20px,20px,125px,25px);    }
+
+  .icon-circle-arrow-left              { .sprite(20px,20px,150px,0);           }
+  .icon-circle-arrow-left-inverted     { .sprite(20px,20px,150px,25px);        }
+  .icon-circle-arrow-left-white        { .sprite(20px,20px,175px,0);           }
+  .icon-circle-arrow-left-white-inverted  { .sprite(20px,20px,175px,25px);     }
+
+  .field-checkbox-btn,
+  .icon-checkbox                       { .sprite(13px,15px,220px,0);           }
+    
+  .field-checkbox-checked .field-checkbox-btn,
+  .icon-checkbox-checked               { .sprite(13px,15px,240px,0);           }
+  
+  //.field-checkbox input[type="checkbox"]:checked + .field-checkbox-btn { .icon-checkbox-checked }
+
+  .field-radio-btn                     { .sprite(13px,13px,220px,20px);           }
+  .icon-radio                          { .sprite(13px,13px,220px,20px);           }
+  
+
+  .field-radio-checked .field-radio-btn,
+  .icon-radio-checked                  { .sprite(13px,13px,240px,20px);           }
+  
+  //.field-radio input[type="radio"]:checked + .field-radio-btn { .icon-radio-checked }
+  
+  .icon-plusbox                        { .sprite(11px,11px,220px,40px);           }
+  .icon-minusbox                       { .sprite(11px,11px,240px,40px);           }
+
+  .icon-dot {font-size: 14px;}
+
+  .icon-select                         { .sprite(8px,14px,220px,60px);        }
+  .icon-select-inverted                { .sprite(8px,14px,260px,60px);        }
+  
+  .icon-circle-close-red               { .sprite(20px,20px,0px,60px);        }
+  .icon-square-close-red               { .sprite(15px,14px,80px,100px);        }  
+  .icon-square-close-micro             { .sprite(9px,9px,100px,100px);        }  
+  
+  /* MJ 2015-06: 
+     Update video and audio play icons to mirror Kaltura icons */
+  .icon-play,
+  .widget-video-rendered.video .kWidgetPlayBtn { .sprite(70px,53px,320px,53px); }
+  .icon-audio,
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn { .sprite(70px,53px,390px,53px); }  
+
+  /* MJ 2015-06: 
+     Override Kaltura embedded styles for inline play icon:
+     http://webdev.hbs.edu/shared/docs/widgets.html#InlineVideos */
+  .widget-video-rendered.video .kWidgetPlayBtn,
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn {
+     position: absolute;
+     top: 50%; 
+     left: 50%; 
+     display: block;
+     margin-top: -26.5px; 
+     margin-left: -35px;
+     background: url('../images/framework/3.0/framework.png') no-repeat -320px -53px !important;
+  }
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn {
+     background-position: -390px -53px !important;
+  }
+
+  /* MJ: Initial non-sprite version */
+/*
+  .icon-play,
+  .icon-audio,
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn { 
+     display: inline-block;
+     height: 53px; 
+     width: 70px; 
+  }
+  .icon-play { 
+     background-image: url('http://cdnapi.kaltura.com/html5/html5lib/v2.27.1/modules/MwEmbedSupport/skins/common/images/player_big_play_button.png');
+     background-repeat: no-repeat;
+     background-position: 50% 50%; 
+  }
+  .icon-audio,
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn { 
+     font-size: 38px; 
+     text-align: center; 
+     background-color: #000; 
+     color: #7d7d7d; 
+     border-radius: 6px; 
+     opacity: 0.7;
+     font-family: 'icomoon'; // Icomoon
+     speak: none;
+     font-style: normal;
+     font-weight: normal;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-audio:before,
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn:before { 
+     content: "\e612"; 
+     vertical-align: middle; 
+  }
+*/
+
+/*  .widget-video-rendered.video .kWidgetPlayBtn {
+    background-image: none;
+  }
+  .widget-video-rendered.video .kWidgetPlayBtn:hover:after {
+     content: ' ';
+     margin-top: 13px;
+     margin-left: 13px;
+    .sprite(39px,33px,40px,100px);
+  }
+  .widget-video-rendered.video .kWidgetPlayBtn:after {
+    content: ' ';
+     margin-top: 13px;
+     margin-left: 13px;
+     .sprite(39px,33px,40px,60px);
+  }
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn {
+    background-image: none;
+  }
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn:hover:after {
+     content: ' ';
+     margin-top: 13px;
+     margin-left: 13px;
+    .sprite(39px,33px,150px,140px);
+  }
+  .widget-video-rendered.audiothumb .kWidgetPlayBtn:after {
+     content: ' ';
+     margin-top: 13px;
+     margin-left: 13px;
+     .sprite(39px,33px,110px,140px);
+  }*/
+
+
+
+  .icon-image                           { .sprite(39px,33px,120px ,180px);        }
+  .icon-image-teal                      { .sprite(39px,33px,160px,180px);        }
+
+  .icon-itunes                      { .sprite(16px,16px,80px,60px);        }
+  .icon-facebook                      { .sprite(16px,16px,100px,60px);        }
+  .icon-youtube                      { .sprite(16px,16px,120px,60px);        }
+  .icon-twitter                      { .sprite(16px,16px,140px,60px);        }
+  .icon-rss                      { .sprite(16px,16px,80px,80px);        }
+  .icon-linkedin                      { .sprite(16px,16px,100px,80px);        }
+  .icon-pdf                           { .sprite(14px,15px,120px,80px);        }
+  .icon-share                      { .sprite(14px,15px,20px,140px);        }
+  .icon-share-white                { .sprite(14px,15px,0,140px);        }
+  .icon-email                      { .sprite(14px,15px,20px,155px);        }
+  .icon-email-white                { .sprite(14px,15px,0,155px);        }
+  .icon-download                      { .sprite(14px,10px,20px,180px);        }
+  .icon-download-white                { .sprite(14px,10px,0,180px);        }
+  .icon-print                      { .sprite(14px,14px,60px,180px);        }
+  .icon-print-white                { .sprite(14px,14px,40px,180px);        }
+  .icon-comments                      { .sprite(14px,13px,100px,180px);        }
+  .icon-search-white                  {.sprite(15px,19px,80px,140px)}
+
+  .icon-twitter-favorite                  {.sprite(20px,20px,160px,60px)}
+  .icon-twitter-reply                  {.sprite(25px,20px,160px,80px)}
+  .icon-twitter-retweet                  {.sprite(30px,20px,160px,100px)}
+  
+    .icon42-search {
+        .sprite(40px,42px,0,260px)
+    }
+    .icon42-cross {
+        .sprite(38px,42px,303px,260px)
+    }
+    .icon42-gplus {
+       .sprite(40px,42px,262px,260px)
+    }
+    .icon42-twitter {
+       .sprite(42px,42px,220px,260px)
+    }
+    .icon42-youtube {
+       .sprite(30px,42px,180px,260px)
+    }
+    .icon42-itunes {
+       .sprite(34px,42px,80px,260px)
+    }
+    .icon42-instagram {
+       .sprite(36px,42px,40px,260px)
+    }
+    .icon42-facebook {
+       .sprite(16px,42px,160px,260px)
+    }
+    .icon42-linkedin {
+       .sprite(27px,42px,121px,260px)
+    }
+
+    .icon42-scross {
+        .sprite(38px,48px,303px,258px)
+    }
+    .icon42-ssearch {
+        .sprite(34px,48px,-0,258px)
+    }
+
+    .icon-dropdown {
+      position: relative;
+      padding-left: 10px;
+      &:after {
+        border: 3px solid transparent;
+        border-top-color: #777;
+        border-top-width: 4px;
+        .opacity(.85);
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        margin-left: 5px;
+      }
+      &.hbsred:after{
+        border-top-color: #a41034;
+      }
+    }
+
+
+  .icon-bar {
+    display: block;
+    width: 32px;
+    height: 4px;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 3px;
+    margin-top: 4px;
+    line-height: 14px;
+  }
+
+  .icon-x {
+    font-size: 44px;
+    font-family: Verdana;
+    line-height: .6;
+  }
+  
+  .icon-expand2 {
+     display: inline-block;  
+     height: 17px;
+     width: 24px;
+     
+     &:before {
+        content: "";
+        border-top: 3px solid black;
+        display: block;
+        height: 3px;
+        width: 25px;
+     }
+     &:after {
+        content: "";
+        border: 10px solid transparent;
+        border-top-color: black;
+        display: block;
+        height: 1px;
+        width: 1px;
+        margin-top: 2px;
+        margin-left: 2px;
+     }
+     
+     &.white:before {
+        border-color: white;
+     }
+     &.white:after {
+        border-top-color: white;
+     }
+  }
+
+  .icon-collapse2 {
+     display: inline-block;  
+     height: 17px;
+     width: 24px;
+     
+     &:after {
+        content: "";
+        border-top: 3px solid black;
+        display: block;
+        height: 3px;
+        width: 25px;
+     }
+     &:before {
+        content: "";
+        border: 10px solid transparent;
+        border-bottom-color: black;
+        display: block;
+        height: 1px;
+        width: 1px;
+        margin-top: -10px;
+        margin-bottom: 4px;
+        margin-left: 2px;
+     }
+     
+     &.white:before {
+        border-color: white;
+     }
+     &.white:after {
+        border-top-color: white;
+     }
+  }
+
+  
+  .icon-comments-count {
+     border: 1px solid #ccc;
+     background-color: #eee;
+     font-family: "lucida grande", sans-serif;
+     font-size: 11px;
+     line-height: 12px;
+     display: inline-block;
+     padding: 0 3px 0 0; 
+     
+     .icon-comments-nub                  { .sprite(6px,7px,113px,193px);  margin-left: -5px; margin-right: 1px; }
+     
+  }
+  
+  .icon-comments-white                { .sprite(14px,13px,80px,180px);        }
+  
+  .field-select-btn,
+  .icon-expand                      { .sprite(13px,11px,220px,80px);        }
+  .icon-expand-white                { .sprite(13px,11px,240px,80px);        }
+  .icon-expand-inverted             { .sprite(13px,11px,260px,80px);        }
+  .icon-expand-white-inverted       { .sprite(13px,11px,280px,80px);        }
+  .icon-collapse                    { .sprite(13px,11px,220px,100px);        }
+  .icon-collapse-white              { .sprite(13px,11px,240px,100px);        }
+  .icon-collapse-inverted           { .sprite(13px,11px,260px,100px);        }
+  .icon-collapse-white-inverted     { .sprite(13px,11px,280px,100px);        }
+  .icon-expand-large                { .sprite(19px,15px,220px,119px);        }
+  .icon-footer-expand               { .sprite(13px,11px,120px,100px);        }  
+  .icon-footer-collapse            { .sprite(13px,11px,140px,100px);        }  
+
+  .icon-accordian-expand               { .sprite(16px,9px,220px,140px);        }  
+  .icon-accordian-collapse            { .sprite(16px,9px,240px,140px);        }  
+
+  
+  .icon-back-to-top                 { .sprite(70px,70px,358px,218px);        }
+ 
+  .icon-transition-bg-color { .transition(background-color .2s linear); }
+  .icon-transition-color { .transition(color .2s linear); }
+
+}

@@ -1,0 +1,211 @@
+
+.pattern-framework {
+
+//------------------
+// Media
+//------------------  
+ 
+.media {
+   list-style-type: none;   
+   background-image:none;
+   margin: 0;
+   //background-color: rgba(255,200,200,.1);
+   
+   &:before,
+   .linear li:before {
+      background-image: none !important;
+   }
+   
+   .mu-uc {
+      padding-top: 2px;
+   }
+   
+   .gamma, .gamma-uc {
+      margin-top: 9px;
+      margin-bottom: 8px;
+   }
+
+   .theta, .theta-uc {
+      margin-top: 5px;
+   }
+   
+   .eta, .eta-uc, 
+   .epsilon, .epsilon-uc {
+      margin-top: 5px;
+      margin-bottom: 4px;
+   }
+   
+   .kappa, .kappa-uc {
+      margin-top: 3px;
+      margin-bottom: 6px;
+   }
+   
+   .paragraph {
+      margin-top: 3px;
+   }
+   
+   .event-thumbnail {
+      //position: relative;
+      //top: -2px;
+      //margin-bottom: 28px;
+   }
+
+}
+
+//------------------
+// Media Row
+//------------------  
+
+.media-row {
+    .media-left {
+        float: left;
+        margin-right: 24px;
+    }
+    .media-body {
+        overflow: hidden;
+        display: block;
+    }
+}
+
+
+//------------------
+// Media Lists
+//
+//   - ordered next to overwrite the media definitions above
+//
+//------------------  
+
+.media-list-base() {
+   .unstyled-list();
+   margin-bottom: 24px;
+   //margin-left: 0 !important; // never let someone put margin left on a media list, this helps with our .ul-outset ul, this causes too many issues
+  
+   *zoom: 1;
+   .media {
+      *float:left; //ie7 gaps between <li> tags
+   }
+}
+
+// sp fix
+.s4-wpTopTable .media-list3,
+.s4-wpTopTable .media-list4 {
+   margin-bottom: 0;
+}
+
+.media-list3 {
+   .media-list-base();
+   
+   .media {
+      margin-bottom: 19px;
+   }
+}
+
+.media-list4,
+.media-list5,
+.media-list6 {
+   .media-list-base();
+   
+   .media {
+      margin-bottom: 19px;
+   }
+   
+   p { 
+      margin-top: 20px;
+   }
+}
+
+.media-list7,
+.media-list8,
+.media-list9 {
+   .media-list-base();
+   p {
+      margin-top: 10px;
+   }
+   
+   .eta {
+      margin-top: 5px;
+   }
+   
+   .kappa {
+      margin-top: 11px;
+   }
+   
+   .media {
+      margin-bottom: 35px;
+   }
+   
+}
+
+
+//------------------
+// Media List Dividers
+//
+//   - adds separation between the media list items
+//
+//------------------  
+
+.media-list-dividers {
+   border-top: 1px solid #ccc;
+   
+   .media {
+      padding-bottom: 20px;
+      padding-top: 17px;
+      border-bottom: 1px solid #CCC;
+      margin-bottom: 0;
+   }
+}
+
+
+//------------------
+// span3 media objects within a grid
+//------------------
+
+.media-span3 {
+   .gamma {
+      margin-top: 8px;
+      margin-bottom: 5px;
+   }
+   .kappa {
+      margin-top: 2px;
+      margin-bottom: 4px;
+   }
+   .eta, .epsilon {
+      margin-top: 4px;
+      margin-bottom: 4px;
+   }
+   .hr {
+      margin-top: 18px;
+      margin-bottom: 22px;
+   }
+   > .mu:first-child,
+   > .mu-uc:first-child,
+   > a.tile > .mu:first-child,
+   > a.tile > .mu-uc:first-child {
+      margin-top: -4px; 
+   }
+   > a.tile > .gamma:first-child {
+      margin-top: -6px; 
+   }
+}
+
+.media-img {
+   margin-bottom: 12px;
+   img {
+      float: left;
+   }
+}
+.media-img::before,
+.media-img::after {
+   display: table;
+   content: "";
+   clear: both;
+}
+
+
+
+
+
+} // .pattern-framework
+
+
+ 

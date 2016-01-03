@@ -1,0 +1,45 @@
+<h1><a class="black section" name="megamenu">megamenu</a></h1>
+<p>Foundation for a megamenu interation.  Supports opening one at a time, and body clicks to close all.</p>
+
+<div class="row">
+<div class="span8 js-framework">
+<h5>results</h5>
+<br/>
+<textarea class="prettyprint">
+<div class="megamenu-container">
+    <div class="megamenu-item">
+        <a href="#" class="megamenu-button megamenu-hide">+ Open</a>
+        <a href="#" class="megamenu-button megamenu-show">- Close</a>
+        <div class="megamenu-show">
+            <a href="#" class="megamenu-close">X</a>
+            One is open
+        </div>
+    </div>
+</div>
+</textarea>
+<br/>
+<div class="view-src">
+    <ul class="linear megamenu-container">
+        <li class="megamenu-item" style="position:relative">
+            <a href="#" class="megamenu-button megamenu-hide">+ Open Option 1</a>
+            <a href="#" class="megamenu-button megamenu-show">- Close Option 1</a>
+            <div class="megamenu-show" style="position:absolute;top: 20px;left:0;background-color:orange;z-index:1000;width:400px;height:200px">
+                <a href="#" class="megamenu-close" style="float:right">X</a>
+                One is open
+            </div>
+        </li>
+        <li> | </li>
+        <li class="megamenu-item" style="position:relative">
+            <a href="#" class="megamenu-button megamenu-hide">+ Open Option 2</a>
+            <a href="#" class="megamenu-button megamenu-show">- Close Option 2</a>
+            <div class="megamenu-show" style="position:absolute;top: 20px;left:0;background-color:blue;z-index:1000;width:400px;height:200px">
+                <a href="#" class="megamenu-close" style="float:right">X</a>
+                Two is open
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+</div>
+</div>

@@ -1,0 +1,34 @@
+
+<h1><a class="black section" name="styledfields">styledfields</a></h1>
+
+<p>Styled forms need JS to change their values</p>
+
+<div class="row">
+    <div class="span6">
+<textarea class="prettyprint">
+$("#myselect select").val("Option 2");
+$(document).trigger("framework.domupdate");
+</textarea>
+</div>
+<div class="span6 js-framework">
+<div id="myselect" class="field-select2">
+<select name="selectname">
+    <option>Option 1</option>
+    <option>Option 2</option>
+</select>
+</div>
+<a href="#" id="myformbutton">Click to change values</a>
+
+<script>
+$(document).ready(function($){
+    $("#myformbutton").click(function(){
+        $("#myselect select").val("Option 2");
+        $(document).trigger("framework.domupdate");
+        return false;
+    })
+})
+
+</script>
+
+</div>
+</div>

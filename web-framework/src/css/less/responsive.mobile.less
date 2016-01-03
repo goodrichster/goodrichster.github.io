@@ -1,0 +1,286 @@
+
+@media screen and (min-width: 351px) and (max-width: @mobile-max-width) {
+   .responsive-mini();
+   .responsive-mobile();
+   //.responsive-supernav();
+}
+
+@media screen and (max-width: 350px) {
+   .responsive-mini();
+   //.responsive-supernav();
+}
+
+.responsive-supernav() {
+  .responsive-framework { 
+
+        .universal-banner .toggle-button {
+           margin-right: -12px !important;
+        }
+
+        #supernav  {
+            .main-sites {
+               display: none;
+            }
+            
+            // tiny logo
+            .school-banner {
+               height: auto;
+               .hbs-logo,
+               .hbs-logo a {
+                  height: 45px;
+                  width: auto;
+               }
+               .hbs-logo {
+                    background-position: 0px -195px;
+                    background-size: @spriteWidth/2 @spriteHeight/2;
+                    position: static;
+               }
+            }
+            
+            .main-bar {
+               height: 32px;
+            }
+            
+           
+            .toplinks {
+                display: none;
+            }
+        
+        }
+
+        #superfooter {
+            .infobar {
+               padding: 20px;
+               box-sizing: border-box;
+               border-bottom: 1px solid silver;
+            }
+            .infobar div.inner{
+                width: 100%;
+                float: left;
+                //padding: 20px;
+            }
+            .infobar .icon-square-close-micro {
+                margin-right: 0;
+            }
+            .shadow {
+                display: none;
+            }
+            .col2 ul li.lev1,
+            .section ul li {
+
+            }
+            .infobar div.section {
+                width: 50%;
+                float: left;
+                margin-right: 0;
+                padding: 0;
+            }
+            .infobar div.section.col3 li {
+                margin-right: 20px;
+            }
+            .col4 {
+                margin-top: 19px;
+            }
+            .infobar div.common {
+                float: left;
+                width: 100%;
+                clear: left;
+                padding-top: 20px;
+            }
+
+
+        }
+
+   }
+}
+
+.responsive-site-header() {
+    .site-header {
+       padding: 0 @responsive-offset;
+       
+       .navbar,
+       .toolbar {
+          display: none;
+       }
+       
+       h1 { 
+          padding-top: 18px; 
+          padding-bottom: 14px;              
+       }
+    }
+}
+
+.responsive-mobile() {
+  .responsive-framework { 
+        .mobile-row    { .grid-framework .fluidrow(); }
+        .mobile-row {
+            .mobile-span1 { .grid-framework .row-fluid .span1; }
+            .mobile-span2 { .grid-framework .row-fluid .span2; }
+            .mobile-span3 { .grid-framework .row-fluid .span3; }
+            .mobile-span4 { .grid-framework .row-fluid .span4; }
+            .mobile-span5 { .grid-framework .row-fluid .span5; }
+            .mobile-span6 { .grid-framework .row-fluid .span6; }
+            .mobile-span7 { .grid-framework .row-fluid .span7; }
+            .mobile-span8 { .grid-framework .row-fluid .span8; }
+            .mobile-span9 { .grid-framework .row-fluid .span9; }
+            .mobile-span10 { .grid-framework .row-fluid .span10; }
+            .mobile-span11 { .grid-framework .row-fluid .span11; }
+            .mobile-span12 { .grid-framework .row-fluid .span12; }
+        }
+
+  }
+}
+
+.responsive-mini() {
+  .responsive-framework { 
+
+        .responsive, // legacy support
+        .responsive-type {
+             .greek(alpha,'Trade Gothic W01 Bold 2',23px,24px,0,optimizeLegibility);
+             .greek(beta,'Trade Gothic W01 Bold 2',23px,24px,0,optimizeLegibility);
+             .greek(gamma,'Trade Gothic W01 Bold 2',23px,24px);
+             .greek(delta,'Trade Gothic W01 Bold 2',23px,24px);
+             .greek(epsilon,'Trade Gothic W01 Bold 2',21px,22px);
+             .greek(eta,'Trade Gothic W01 Bold 2',21px,30px);
+             .greek(theta,'Trade Gothic W01 Roman',21px,30px);
+             .greek(iota,'TradeGothicW02-BoldCn20 675505',21px,30px);
+             .greek(kappa,'Trade Gothic W01 Bold 2',17px,24px); 
+             .more.mu .txt-arrow {margin-top:0;}
+             .btn-large {font-size:21px;}
+        }  
+
+        .desktop-hidden    { display: inherit; }
+        .desktop-visible   { display: none; }
+        .mobile-visible     { display: inherit; } // Use inherit to restore previous behavior
+        .mobile-hidden      { display: none; }
+
+        .cap, .base { margin: 0;}
+        .page-header .mobile-base {
+            margin: 30px 0 0 0;
+        }
+        .mobile-cap {
+            margin-bottom: 25px;
+            overflow: hidden;
+            height: 1px;
+        }
+        .mobile-base {
+            margin-top: 30px;
+            overflow: hidden;
+            height: 1px;
+        }  
+        .mobile-rail4 {
+            display: block;
+            margin: 40px 0;
+            height: 4px;
+            background-color:#000;
+            overflow: hidden;
+            border: 0;
+            .opacity(.2);
+        }
+
+        .h1-mobile-hidden h1, .h2-mobile-hidden h2, .h3-mobile-hidden h3, .h4-mobile-hidden h4 {display: none;}
+
+        .mobile-toggle-show { display: none;}
+
+        .mobile-container {
+           padding-left: @responsive-offset;
+           padding-right: @responsive-offset;
+           clear:left;
+        }
+        
+        .container { .grid-framework .container-none;}
+        .row        { .grid-framework .row-none; }
+        .row > .span1 { .grid-framework .row-none .span-none; }
+        .row > .span2 { .grid-framework .row-none .span-none; }
+        .row > .span3 { .grid-framework .row-none .span-none; }
+        .row > .span4 { .grid-framework .row-none .span-none; }
+        .row > .span5 { .grid-framework .row-none .span-none; }
+        .row > .span6 { .grid-framework .row-none .span-none; }
+        .row > .span7 { .grid-framework .row-none .span-none; }
+        .row > .span8 { .grid-framework .row-none .span-none; }
+        .row > .span9 { .grid-framework .row-none .span-none; }
+        .row > .span10 { .grid-framework .row-none .span-none; }
+        .row > .span11 { .grid-framework .row-none .span-none; }
+        .row > .span12 { .grid-framework .row-none .span-none; }
+        
+        .mobile-flip {
+           display: table;
+           caption-side: top;
+        }
+        .mobile-flip-up {
+           display: table-caption;
+        }
+       
+        .responsive-media();
+        
+        .vrule-offset.span4,
+        .vrule-offset {
+           .grid-framework .vrule-offset-mixin(0px);        
+        }
+        .vrule3h { background: none;}
+
+        .mobile-accordion();
+        
+        .responsive-site-header();
+        
+        .page-header {
+           
+           xh1, .breadcrumb {display: none;}
+           
+           h2 {
+               margin-top: 10px;
+           }
+           
+        }
+        
+        .page-header {
+           clear: left;
+        }
+        
+        .mobile-hr2 {
+           height: 2px;
+           background-color: silver;
+           margin-top: 24px;
+           margin-bottom: 24px;
+        }
+
+        .mobile-hr4 {
+           .mobile-hr2;
+           height: 4px; 
+        }
+        
+        .responsive-offset,
+        .mobile-responsive-offset {
+           margin-left: @responsive-offset;
+           margin-right: @responsive-offset;
+        }
+        
+        .mobile-white-bg { background-color: white;}
+        
+        /*
+        .universal-banner-logo {
+            background-position: 0px -195px;
+            background-size: 325px 250px;
+            top: 0;
+            height: 46px;
+        }
+
+        
+        .universal-banner-logo a {
+            width: 130px;
+            height: 32px;
+        }
+
+        .universal-banner-bar {
+            height: 32px;
+        }*/
+
+        .vrule1,.vrule2,.vrule3,.vrule4,.vrule5,
+        .vrule6,.vrule7,.vrule8,.vrule9,.vrule10,
+        .vrule11,.vrule1h,.vrule2h,.vrule3h,.vrule4h,
+        .vrule5h,.vrule6h,.vrule7h,.vrule8h,.vrule9h,
+        .vrule10h,.vrule11h {background: none;}
+        
+    }
+
+}

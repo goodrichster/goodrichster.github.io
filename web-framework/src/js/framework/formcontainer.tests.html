@@ -1,0 +1,82 @@
+<h1><a class="black section" name="formcontainer">form-container</a></h1>
+<p>fixes sharepoint forms to act more like normal forms and provides validation.  If used on a form element, it provides validation.</p>
+
+<p>Add a <code>class="required"</code> or use the <code>data-</code> attributes from <a href="http://parsleyjs.org/doc/index.html#psly-usage-global-configuration" target="_new">parsley.js</a></p>
+
+<div class="row" id="expandable-test">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="form-container" 
+   data-action="http://www.hbs.edu/cgi-bin/env.cgi" 
+   data-method="GET">
+      <div class="field-group-vertical">
+           <label class="kappa">Email</label>
+           <input type="text" value="" class="field required" 
+           data-type="email"/>
+      </div>
+      <div class="field-shim"></div>
+      <input type="submit" class="btn-submit" value="Save"/>
+</div>
+</textarea>
+
+<p>Add custom submit handlers to the form</p>
+<textarea class="prettyprint">
+<script>
+   $(".form-container").submit(function(event){
+     if ($("input:checked",this).length == 1) {
+        ... display customizations ...
+        event.preventDefault();
+     } else {
+        ... hide customizations ...
+     }
+   });
+</script>
+</textarea>
+</div>
+<div class="span6 orange-inherit">
+<h5>results</h5>
+<div class="view-src">
+<div class="js-framework">
+    <div class="form-container" data-action="http://www.hbs.edu/cgi-bin/env.cgi">
+      <div class="field-group-vertical">
+           <label class="kappa">Email</label>
+           <input type="text" value="" class="field required" data-type="email"/>
+      </div>
+      <div class="field-shim"></div>
+
+      <div>
+            <label class="field-checkbox nu" for="check1">
+                <input name="test" id="check1" value="1" type="checkbox" class="required">
+                <span class="field-checkbox-btn"></span> 
+                Checkbox
+            </label>
+      </div>
+      <div class="field-shim"></div>
+      <input type="submit" class="btn-submit" value="Save"/>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!--
+
+TEST CASES
+
+Click on the first and second tab of the first .nav-tabs, 
+and confirm visibility of elements.
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+
+     
+});
+</script>
+
+

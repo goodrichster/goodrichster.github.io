@@ -1,0 +1,98 @@
+.responsive-framework {
+
+  @media (max-width: @mobile-max-width) {
+      .site-header {
+        .site-header-button {
+            float: right;
+            margin-top: 20px;
+            margin-left: 6px;
+        }
+        h1 {padding-top: 22px;padding-bottom:14px}
+      }
+      .page-header {
+        .responsive-breadcrumb { padding: 0;padding-bottom: 12px;}
+      }
+  }
+ 
+  @media (min-width: @tablet-min-width) and (max-width: @tablet-max-width) {
+
+      .site-header {
+        .site-header-button {
+            float: right;
+            margin-top: 20px;
+            margin-left: 6px;
+        }
+        h1 {padding-top: 20px;padding-bottom:12px;}
+      }
+
+      .page-header {
+        .responsive-breadcrumb { padding: 0;padding-bottom: 12px;}
+      }
+  }
+
+
+  .expandable-headings {
+    .toggle-container {
+      .icon24-close:before, .icon24-open:before {font-size: 12px !important;}
+      a.toggle-button {display: block; text-decoration: none; padding-bottom: 5px; line-height: 1;}
+    }
+    border-bottom: 2px solid #ddd;
+    padding: 15px 0 10px 0;
+  }
+
+  @media (min-width: @tablet-min-width) and (max-width: @tablet-max-width) {
+    .toggle-container {
+      .icon24-close:before, .icon24-open:before {font-size: 20px !important;}
+    }
+  }
+
+  
+
+  .responsive-filters {
+    a {text-decoration: none;}
+    .toggle-container {padding: 16px 0;}
+    .facet-pattern {
+      ul {
+        margin-left: 23px; 
+        li {list-style: none;       }
+      }
+    }
+    .facet-breadcrumb-pattern {padding: 10px 0;}
+    p.counter {text-align: right; margin-bottom: 15px;}
+    i.icon24-filter-open:before, i.icon24-filter-close:before {font-size: 12px !important; margin-left: 5px;}
+  }
+
+  .responsive-filter-bar {
+    padding: 16px 0;
+    i.icon24-filter-open:before, i.icon24-filter-close:before {font-size: 12px !important; margin-left: 5px;}
+  }
+
+    .filter-sticky.fixed  {
+      position: fixed;
+      top: 0;
+      visibility: visible !important; 
+      display: inline !important;     
+      opacity: 1 !important;
+      box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
+      width:100%;
+      z-index:900;
+    }
+
+    .filter-sticky:not(.fixed){
+      position:absolute;
+      top:0px; left:0px;
+    }
+
+  .facets {
+    h2 a {text-decoration: none;}
+    span.plus {margin-right: 9px;} /* fixes 1px flickering issue */
+    span.minus {margin-right: 10px;}
+    span.plus, span.minus {
+        font-weight: bold;
+        vertical-align: top;
+        line-height: 1;
+    }
+  }
+  
+}
+

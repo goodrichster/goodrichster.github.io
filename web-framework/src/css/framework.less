@@ -1,0 +1,53 @@
+// framework.css - Sitewide CSS 
+
+//CSS Best Practices
+//- use child selectors to only impact the pieces you want
+//- don't duplicate class names, make them all unique
+//- apply a class when the html isn't predictable.
+//- Good   .body .box-body
+//- Bad    .box p
+ 
+//@import url('https://fast.fonts.net/cssapi/c6788cc4-d36e-4fa9-8930-0b83e73aea86.css'); // extended individual fonts
+//@import url('https://fast.fonts.com/cssapi/340b86ed-e421-467f-9adf-04c7bf70d998.css');  // individual fonts
+//@import url('//fast.fonts.net/cssapi/7104cb2a-976d-4c0f-803f-1a83c9190762.css');  // grouped fonts
+@import "less/fonts.less";
+@import url('https://s3.amazonaws.com/icomoon.io/36443/HBSIconSet/style.css?slj5ub');
+@import "less/vars.less"; 
+@import "less/mixin.less";
+@import "less/reset.less";
+@import "less/color.less";
+@import "less/type.less";  
+@import "less/component.less";  
+@import "less/button.less";  
+@import "less/form.less";  
+@import "less/table.less";
+@import "less/icon.less";  
+@import "less/icon32.less";  
+@import "less/pattern.less";  
+@import "less/mobile-pattern.less";  
+@import "less/media.less";
+@import "less/navigation.less";
+@import "less/grid.less";
+@import "less/universal-footer.less";  
+@import "less/universal-header.less";  
+@import "less/modal.less";
+@import "less/panel.less";
+@import "less/progress.less";
+@import "less/twitter.less";
+@import "less/datepicker.less";
+@import "less/widget.less";
+@import "less/animation.less";
+@import "less/util.less";
+@import "less/print.less";
+@import "less/supernav.less";
+@import "less/superfooter.less";
+@import "less/wcm.less";
+@import "less/legacy.less";
+//@import "less/atomic.less";
+
+// put responsive at the end for IE selector limit
+@import "less/responsive.less";
+@import "less/responsive.desktop.less";
+@import "less/responsive.mobile.less";
+@import "less/responsive.tablet.less";
+@import "less/responsive-framework-experimental.less";

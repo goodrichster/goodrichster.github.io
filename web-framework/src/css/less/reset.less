@@ -1,0 +1,97 @@
+
+/*================================================================================
+
+Reset taken from
+http://developer.yahoo.com/yui/reset/
+
+----------------------------------------------------------------------------------*/
+ 
+// if you put this under a class .component-framework, then you can't make simple classes in your style sheets .bigpad {padding:10px;}
+
+/**
+ * Prevent iOS text size adjust after orientation change, without disabling user zoom. 
+ * - From normalize.css: https://necolas.github.io/normalize.css/3.0.2/normalize.css
+ */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,ul,ol,li {
+   margin: 0;
+   padding: 0;
+}
+body {
+    font: normal 62.5% Verdana, Arial, sans-serif; 
+    background-color: #ffffff;  
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img { 
+    border:0;
+}
+input[type="button"], input[type="submit"], input[type="reset"], button {
+    padding: 1px 6px;
+}
+ol,ul,dl {
+    margin-left:1.2em;
+}
+
+
+
+/*================================================================================
+
+Sharepoint Reset
+
+----------------------------------------------------------------------------------*/
+
+.ms-WPBody,
+.ms-WPBody td {
+   font-size: inherit;
+   font-family: inherit;
+}
+
+html .ms-rte-wpbox {
+   color: inherit;
+   font-size:inherit;
+   line-height:inherit;
+}
+
+.s4-wpTopTable > tbody > tr > td {
+   padding: 0;
+}
+
+#RibbonContainer-TabRowRight,
+#s4-statusbarcontainer { font-size: 11px;}
+
+#pageStatusBar {z-index: 1000;}
+
+#DeveloperDashboard td,
+#DeveloperDashboard ul,
+#DeveloperDashboard li {
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+li.ms-MenuUIULItem {
+   list-style-type: none;
+   display: block;
+}
+
+#s4-statusbarcontainer {
+   position: relative;
+}
+
+#pageStatusBar {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+.ms-rtestate-write {
+   outline: 1px dashed #333;
+}
