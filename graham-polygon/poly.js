@@ -65,9 +65,9 @@ function getAngle(s) {
 
 function draw() {
 	
-	renderPolyOptions();
+	//renderPolyOptions();
 
-	
+
 	var s = getSides();
 
 	$( '#slider' ).slider.value = s;
