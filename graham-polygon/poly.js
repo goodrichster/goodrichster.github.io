@@ -13,8 +13,8 @@ function getPolys() {
 function fetchPolys() {
 		var jsonString = $.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
-			for (var prop in jsonString) {
-				console.log("Shape " + prop + " has " + jsonString[prop] + " sides.");			
+			for (var prop in data) {
+				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
 		});
 //		setPolys( jQuery.parseJSON( jsonString ) );
