@@ -9,7 +9,7 @@ function setPolys(data) {
 
 function renderPolyOptions() {
 	console.log("renderPolyOptions() Drawing drop-down");
-	var options = "";
+	var options = "<!-- dynamic rendering -->";
 	for (var prop in polys) {
 		var name = prop;
 		var size = polys[prop];
