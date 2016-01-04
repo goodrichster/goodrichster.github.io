@@ -1,11 +1,12 @@
 var polys = new Object(); // global var to hold polys json object
+console.log("init: " + polys);
 
 function renderPolyOptions() {
 
 	console.log ("render says: polys empty is " + polys === null || polys === undefined  )
 
 	// if polys is empty, fetch the data
-	if (polys === undefined || polys == null) {
+	if (polys === undefined || polys === null) {
 		fetchPolys();
 	}
 
@@ -15,7 +16,7 @@ function renderPolyOptions() {
 		sides += 1;
 		options += "<option value=\"" + polys[prop] + "\">" + prop + " (" + polys[prop] + ")</option>";
 	}
-	// the next part is just a little extra dynamic rendering
+	// the next part is just a little extra dynamic rendering, it also handles case of failed json
 	for (i = sides; i < 21; i++) {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
