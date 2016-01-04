@@ -132,7 +132,7 @@ function drawPoly(s) {
 
 function drawSlider() {
 		$( '#slider' ).slider({
-			max: MAX_SIDES,
+			max: MAX_SIDES + 1,
 			min: 3,
 			orientation: "vertical",
 			value: 3,
