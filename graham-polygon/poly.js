@@ -3,16 +3,14 @@
 var polys = new Object(); // global var to hold polys json object
 var MAX_SIDES = 40;
 
-
-
 function init() {
 	var qSides = parseInt(location.search.split('?')[1]);
 	if (Number.isInteger(qSides))
 	{
 		MAX_SIDES = qSides;
 	}
-	console.log("qSides is " + parseInt(qSides)) ;
-	console.log("Max is " + MAX_SIDES) ;
+	// console.log("qSides is " + parseInt(qSides)) ;
+	// console.log("Max is " + MAX_SIDES) ;
 
 	drawSlider();
 	renderPolyOptions();
@@ -74,6 +72,8 @@ function getAngle(s) {
 }
 
 function draw() {
+
+	renderPolyOptions();
 
 	var s = getSides();
 
