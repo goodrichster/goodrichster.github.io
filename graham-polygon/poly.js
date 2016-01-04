@@ -23,7 +23,6 @@ function renderPolyOptions() {
 
 function fetchPolys() {
 		console.log ("polys empty is " + polys === null)
-		polys = data; // from json string
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
