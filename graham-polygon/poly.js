@@ -6,8 +6,11 @@ var MAX_SIDES = 40;
 
 
 function init() {
-	var $_GET = URI(document.URL).query(true); 
-	MAX_SIDES = $_GET['max']; 
+	var qs = location.search.split('?')[1];
+	if (!qs === null)
+	{
+		MAX_SIDES = parseInt(qs);
+	}
 	console.log("Max is " + MAX_SIDES) ;
 
 	drawSlider();
