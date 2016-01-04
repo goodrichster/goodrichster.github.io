@@ -3,6 +3,9 @@
 var polys = new Object(); // global var to hold polys json object
 var MAX_SIDES = 40;
 
+var $_GET = URI(document.URL).query(true); 
+MAX_SIDES = $_GET['max']);  
+
 function init() {
 	drawSlider();
 	renderPolyOptions();
