@@ -11,8 +11,10 @@ function getPolys() {
 }
 
 function fetchPolys() {
-		var jsonString = $.getJSON("poly-data.json", function(data) {
+		var jsonString = $.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
+			var shape = data.Triangle;
+			console.log("Shape is"  + shape)
 		});
 		setPolys( jQuery.parseJSON( jsonString ) );
 }
