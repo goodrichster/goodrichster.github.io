@@ -9,18 +9,11 @@ function init() {
 		MAX_SIDES = qSides;
 	}
 	drawSlider();
+	fetchPolys();
 	renderPolyOptions();
 }
 
 function renderPolyOptions() {
-
-	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0).toString());
-	// if polys is empty, fetch the data
-	if (Object.keys(polys).length === 0) {
-		fetchPolys();
-	}
-	console.log ("render now says: polys empty is " + (Object.keys(polys).length === 0).toString());
-
 	var options = "<select onchange=\"draw()\" id=\"x\">";
 	var sides= 3;
 	for (var prop in polys) {
@@ -36,7 +29,7 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		// $.ajaxSetup({ async: false });
+		$.ajaxSetup({ async: false });
 		var jqxhr = $.getJSON("./poly-data.json").done( function(data) {
 				polys = jQuery.extend(true, {}, data);
 		});
