@@ -3,6 +3,9 @@
 var polys = new Object(); // global var to hold polys json object
 var MAX_SIDES = 30;
 
+drawSlider();
+renderPolyOptions();
+
 function setPolys(data) {
 	//polys = JSON.parse(JSON.stringify(data));
 	polys = jQuery.extend(true, {}, data);
@@ -60,9 +63,9 @@ function getAngle(s) {
 
 function draw() {
 	
-	renderPolyOptions(); // back into draw...
-
 	var s = getSides();
+
+	$( '#slider' ).slider.value = s;
 
 	$('#sides').text( s );
 	$('#angle').text( (getAngle(s)).toFixed(1) );
@@ -127,7 +130,7 @@ function drawPoly(s) {
 
 function drawSlider() {
 		$( '#slider' ).slider({
-			max: 20,
+			max: MAX_SIDES,
 			min: 3,
 			orientation: "vertical",
 			value: 3,
