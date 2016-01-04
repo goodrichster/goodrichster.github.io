@@ -5,7 +5,7 @@ function renderPolyOptions() {
 	console.log ("render says: polys empty is " + polys === null || polys === undefined  )
 
 	// if polys is empty, fetch the data
-	if (polys === unefined || polys == null) {
+	if (polys === undefined || polys == null) {
 		fetchPolys();
 	}
 
