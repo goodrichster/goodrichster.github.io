@@ -11,7 +11,7 @@ function getPolys() {
 }
 
 function fetchPolys() {
-		var jsonString = $.getJSON("poly-data.json", function() {
+		var jsonString = $.getJSON("poly-data.json", function(data) {
 			console.log("got JSON");
 		});
 		setPolys( jQuery.parseJSON( jsonString ) );
