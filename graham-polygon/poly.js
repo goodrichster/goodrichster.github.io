@@ -22,6 +22,7 @@ function renderPolyOptions() {
 		var size = polys[prop];
 		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
 	}
+	$('#poly-options').text(options);
 }
 
 function fetchPolys() {
