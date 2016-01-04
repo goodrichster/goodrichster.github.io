@@ -11,6 +11,7 @@ function init() {
 	{
 		MAX_SIDES = parseInt(qs);
 	}
+	console.log("qs is " + parseInt(qs)) ;
 	console.log("Max is " + MAX_SIDES) ;
 
 	drawSlider();
