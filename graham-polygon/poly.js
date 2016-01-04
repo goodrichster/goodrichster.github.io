@@ -4,6 +4,9 @@ function setPolys(remotePolys) {
 	// init the polys for listing from json
 	var polys = remotePolys;
 	console.log("Setting " + polys);
+	for (var prop in polys) {
+		console.log("setPolys() " + prop + " has " + polys[prop] + " sides.");			
+	}
 }
 
 function getPolys() {
