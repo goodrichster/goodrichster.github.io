@@ -10,7 +10,18 @@ function setPolys(data) {
 }
 
 function getPolys() {
-	console.log(polys);
+	// redundant due to global var polys
+	//console.log(polys);
+}
+
+function renderPolyOptions() {
+	console.log("renderPolyOptions() Drawing drop-down");
+	var options = "";
+	for (var prop in polys) {
+		var name = prop;
+		var size = polys[prop];
+		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
+	}
 }
 
 function fetchPolys() {
