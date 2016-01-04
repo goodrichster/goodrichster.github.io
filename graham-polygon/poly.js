@@ -5,7 +5,7 @@ var polys = new Object(); // global var to hold polys json object
 
 function setPolys(data) {
 	console.log("setPolys() reporting in... ");
-	polys = data;
+	polys = JSON.parse(JSON.stringify(data));
 }
 
 function renderPolyOptions() {
