@@ -1,11 +1,4 @@
-var polys;
-
-function setPolys(data) {
-	// init the polys for listing from json
-	polys = data;
-	console.log("Setting " + polys);
-	renderPolyOptions();
-}
+var polys; // global var
 
 function renderPolyOptions() {
 	console.log("renderPolyOptions() Drawing drop-down");
@@ -22,19 +15,21 @@ function renderPolyOptions() {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
-	console.log(options);
+	//console.log(options);
 	$('#poly-options').html(options);
 
 	draw(); // for first page load
 }
 
 function fetchPolys() {
+		console.log ("polys empty is " + polys === null)
+		polys = data; // from json string
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
-			setPolys(data)
+			polys = data;
 		});
 }
 
