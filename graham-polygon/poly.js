@@ -19,9 +19,11 @@ function fetchPolys() {
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
+			setPolys(data)
 		});
 //		setPolys( jQuery.parseJSON( jsonString ) );
-		setPolys( jsonString );
+//		setPolys( jsonString );
+		draw();
 }
 
 function getSides() {
