@@ -14,7 +14,7 @@ function fetchPolys() {
 		var jsonString = $.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			foreach prop in jsonString {
-				console.log("Shape " + prop + " has " + jsonString[prop] + " sides.")				
+				console.log("Shape " + prop + " has " + jsonString[prop] + " sides.");			
 			}
 		});
 //		setPolys( jQuery.parseJSON( jsonString ) );
