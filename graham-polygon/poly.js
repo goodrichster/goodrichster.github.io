@@ -36,7 +36,7 @@ function renderPolyOptions() {
 
 function fetchPolys() {
 		console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
-		$.getJSON("./poly-data.json", function(data) {
+		polys = $.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
