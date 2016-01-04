@@ -3,10 +3,10 @@ console.log("init: " + polys);
 
 function renderPolyOptions() {
 
-	console.log ("render says: polys empty is " + polys === null || polys === undefined  )
+	console.log ("render says: polys empty is " + polys === null || polys === void  )
 
 	// if polys is empty, fetch the data
-	if (polys === undefined || polys === null) {
+	if (polys === void || polys === null) {
 		fetchPolys();
 	}
 
@@ -28,7 +28,7 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		console.log ("fetch says: polys empty is " + polys === null || polys === undefined  )
+		console.log ("fetch says: polys empty is " + polys === null || polys === void  )
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
