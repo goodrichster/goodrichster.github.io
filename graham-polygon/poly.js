@@ -1,6 +1,7 @@
 //TODO http://threejs.org/
 
 var polys = new Object(); // global var to hold polys json object
+var MAX_SIDES = 30;
 
 function setPolys(data) {
 	//polys = JSON.parse(JSON.stringify(data));
@@ -10,12 +11,10 @@ function setPolys(data) {
 function renderPolyOptions() {
 
 	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0).toString());
-
 	// if polys is empty, fetch the data
 	if (Object.keys(polys).length === 0) {
 		fetchPolys();
 	}
-
 	console.log ("render now says: polys empty is " + (Object.keys(polys).length === 0).toString());
 
 
@@ -26,14 +25,12 @@ function renderPolyOptions() {
 		options += "<option value=\"" + polys[prop] + "\">" + prop + " (" + polys[prop] + ")</option>";
 	}
 	// the next part is just a little extra dynamic rendering, it also handles case of failed json
-	for (i = sides; i < 21; i++) {
+	for (i = sides; i < MAX_SIDES; i++) {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
 
 	$('#poly-options').html(options);
-
-	//draw(); // for first page load, draw the default shape
 }
 
 function fetchPolys() {
@@ -127,3 +124,18 @@ function drawPoly(s) {
 	return xy;
 
 }
+
+function drawSlider() {
+		$( '#slider' ).slider({
+			max: MAX_SIDES,
+			min: 3,
+			orientation: "vertical",
+			value: 3,
+			animate: "fast",
+			slide: function(event, ui) { 
+		        $('#x').val(ui.value);
+		        draw();
+			    } 
+		});
+}
+
