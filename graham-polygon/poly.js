@@ -33,7 +33,7 @@ function renderPolyOptions() {
 
 	$('#poly-options').html(options);
 
-	draw(); // for first page load, draw the default shape
+	//draw(); // for first page load, draw the default shape
 }
 
 function fetchPolys() {
@@ -62,6 +62,9 @@ function getAngle(s) {
 }
 
 function draw() {
+	
+	renderPolyOptions(); // back into draw...
+
 	var s = getSides();
 
 	$('#sides').text( s );
