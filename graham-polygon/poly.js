@@ -1,4 +1,21 @@
+var polys;
 
+function setPolys(remotePolys) {
+	// init the polys for listing from json
+	polys = remotePolys;
+	console.log("Setting " + polys);
+}
+
+function getPolys() {
+	return polys;
+}
+
+function fetchPolys() {
+		var jsonString = $.getJSON("poly-data.json", function() {
+			console.log("got JSON");
+		})
+		setPolys( jQuery.parseJSON( jsonString ) );
+}
 
 function getSides() {
 	var s = parseInt($('#x').val() );
