@@ -6,12 +6,12 @@ var MAX_SIDES = 40;
 
 
 function init() {
-	var qs = location.search.split('?')[1];
-	if (!qs === null)
+	var qSides = parseInt(location.search.split('?')[1]);
+	if (Number.isInteger(qSides))
 	{
-		MAX_SIDES = parseInt(qs);
+		MAX_SIDES = qSides;
 	}
-	console.log("qs is " + parseInt(qs)) ;
+	console.log("qSides is " + parseInt(qSides)) ;
 	console.log("Max is " + MAX_SIDES) ;
 
 	drawSlider();
