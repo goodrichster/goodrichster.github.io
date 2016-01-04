@@ -36,12 +36,9 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		//$.ajaxSetup({ async: false });
+		$.ajaxSetup({ async: false });
 		var jqxhr = $.getJSON("./poly-data.json").done( function(data) {
-					//polys = jQuery.extend(true, {}, data);
-		});
-		jqxhr.done(function(data) { 
-			polys = jQuery.extend(true, {}, data) ; 
+				polys = jQuery.extend(true, {}, data);
 		});
 }
 
