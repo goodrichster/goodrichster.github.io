@@ -53,13 +53,13 @@ function fetchPolys() {
 
 function getSides() {
 	var s = parseInt($('#x').val() );
-	console.log ("The computer say there are this many sides " + s);
+	// console.log ("The computer say there are this many sides " + s);
 	return s;
 }
 
 function getAngle(s) {
 	var degrees = 180 * (s - 2) / s;
-	console.log ("The computer say there are this many degrees " + degrees);
+	// console.log ("The computer say there are this many degrees " + degrees);
 	return degrees;
 }
 
