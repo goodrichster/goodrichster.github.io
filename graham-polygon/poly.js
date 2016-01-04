@@ -39,9 +39,6 @@ function fetchPolys() {
 		var jqxhr = $.getJSON("./poly-data.json", {async: false}).done( function(data) {
 					polys = jQuery.extend(true, {}, data);
 		});
-		jqxhr.complete(function() {
-		  polys = jQuery.extend(true, {}, data);
-		}); 
 }
 
 function getSides() {
