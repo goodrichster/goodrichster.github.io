@@ -1,28 +1,33 @@
-var polys; // global var
+var polys = new Object(); // global var to hold polys json object
 
 function renderPolyOptions() {
-	console.log("renderPolyOptions() Drawing drop-down");
-	var selectString = "<select onchange=\"draw()\" id=\"x\">"
-	var options = "<!-- dynamic rendering --> " + selectString; 
+
+	console.log ("render says: polys empty is " + polys === null || polys === undefined  )
+
+	// if polys is empty, fetch the data
+	if (polys === unefined || polys == null) {
+		fetchPolys();
+	}
+
+	var options = "<select onchange=\"draw()\" id=\"x\">";
 	var sides= 3;
 	for (var prop in polys) {
 		sides += 1;
-		var name = prop;
-		var size = polys[prop];
-		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
+		options += "<option value=\"" + polys[prop] + "\">" + prop + " (" + polys[prop] + ")</option>";
 	}
+	// the next part is just a little extra dynamic rendering
 	for (i = sides; i < 21; i++) {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
-	//console.log(options);
+
 	$('#poly-options').html(options);
 
-	draw(); // for first page load
+	draw(); // for first page load, draw the default shape
 }
 
 function fetchPolys() {
-		console.log ("polys empty is " + polys === null)
+		console.log ("fetch says: polys empty is " + polys === null || polys === undefined  )
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {

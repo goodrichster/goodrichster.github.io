@@ -15,39 +15,22 @@
 <script src="./poly.js"></script>
 
 
-<body onload="fetchPolys()" style="background-color:Ivory";>
+<body onload="renderPolyOptions()" style="background-color:Ivory";>
 
 <div id="poly-set" onclick="getPolys()">what we know about polygons....</div>
 
 <br>	
 	Number of sides
-<!--
-	<select onchange="draw()" id="x">
-		<option value="3">Triangle (3)</option>
-		<option value="4">Square (4)</option>
-		<option value="5">Pentagon (5)</option>
-		<option value="6">Hexagon (6)</option>
-		<option value="7">Heptagon (7)</option>
-		<option value="8">Octagon (8)</option>
-		<option value="9">Nonagon (9)</option>
-		<option value="10">Decagon (10)</option>
-		<option value="11">Undecagon (11)</option>
-		<option value="12">Dodecagon (12)</option>
-		<option value="13">Triskaidecagon (13)</option>
-		<option value="14">Tetradecagon (14)</option>
-		<option value="15">Pentadecagon (15)</option>
-		<option value="16">Hexadecagon (16)</option>
-		<option value="17">Heptadecagon (17)</option>
-		<option value="18">Octadecagon (18)</option>
-		<option value="19">Nonadecagon (19)</option>
-		<option value="20">Icosagon (20)</option>
-		<option value="40">Tetracontagon (40)</option>
-	</select>
-		-->
-		<span id="poly-options">Select a Polygon</span>
+	
+	<span id="poly-options">Select a Polygon</span>
 
 	<div style="float:left;clear:both;vertical-align:bottom;height:200px;" id="slider"></div>
 	
+
+	<!--
+	TODO: get this script out of the html
+	-->
+
 	<script>
 		$( '#slider' ).slider({
 			max: 20,
