@@ -1,8 +1,8 @@
 // var polys;
 
-function setPolys(remotePolys) {
+function setPolys(data) {
 	// init the polys for listing from json
-	var polys = remotePolys;
+	var polys = data;
 	console.log("Setting " + polys);
 	for (var prop in polys) {
 		console.log("setPolys() " + prop + " has " + polys[prop] + " sides.");			
@@ -14,7 +14,7 @@ function getPolys() {
 }
 
 function fetchPolys() {
-		var jsonString = $.getJSON("./poly-data.json", function(data) {
+		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
