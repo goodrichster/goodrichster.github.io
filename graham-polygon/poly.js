@@ -7,7 +7,7 @@ var MAX_SIDES = 40;
 
 function init() {
 	var $_GET = URI(document.URL).query(true); 
-	MAX_SIDES = $_GET['max']); 
+	MAX_SIDES = $_GET['max']; 
 	console.log("Max is " + MAX_SIDES) ;
 
 	drawSlider();
