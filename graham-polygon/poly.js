@@ -2,6 +2,7 @@
 var polys; // global var to hold polys json object
 
 function setPolys(data) {
+	console.log("setPolys() reporting in... ");
 	polys = data;
 }
 
