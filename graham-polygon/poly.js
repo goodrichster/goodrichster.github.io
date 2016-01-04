@@ -30,7 +30,7 @@ function renderPolyOptions() {
 		options += "<option value=\"" + polys[prop] + "\">" + prop + " (" + polys[prop] + ")</option>";
 	}
 	// the next part is just a little extra dynamic rendering, it also handles case of failed json
-	for (i = sides; i < MAX_SIDES; i++) {
+	for (i = sides; i < MAX_SIDES + 1; i++) {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
@@ -132,7 +132,7 @@ function drawPoly(s) {
 
 function drawSlider() {
 		$( '#slider' ).slider({
-			max: MAX_SIDES + 1,
+			max: MAX_SIDES,
 			min: 3,
 			orientation: "vertical",
 			value: 3,
