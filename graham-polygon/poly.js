@@ -1,12 +1,13 @@
-var polys = new Object(); // global var to hold polys json object
+//var polys = new Object(); // global var to hold polys json object
+var polys; // global var to hold polys json object
 console.log("init: " + polys);
 
 function renderPolyOptions() {
 
-	console.log ("render says: polys empty is " + polys === null || polys === void  )
+	console.log ("render says: polys empty is " + polys === null || polys === void 0 )
 
 	// if polys is empty, fetch the data
-	if (polys === void || polys === null) {
+	if (polys === void 0 || polys === null) {
 		fetchPolys();
 	}
 
@@ -28,7 +29,7 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		console.log ("fetch says: polys empty is " + polys === null || polys === void  )
+		console.log ("fetch says: polys empty is " + polys === null || polys === void 0 )
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
