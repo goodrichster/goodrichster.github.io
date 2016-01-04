@@ -1,5 +1,7 @@
-//var polys = new Object(); // global var to hold polys json object
-var polys; // global var to hold polys json object
+//TODO http://threejs.org/
+
+var polys = new Object(); // global var to hold polys json object
+//var polys; // global var to hold polys json object
 
 function setPolys(data) {
 	console.log("setPolys() reporting in... ");
