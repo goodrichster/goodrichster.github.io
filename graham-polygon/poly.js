@@ -36,20 +36,21 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		$.ajaxSetup({ async: false });
+		//$.ajaxSetup({ async: false });
 		var jqxhr = $.getJSON("./poly-data.json").done( function(data) {
-					polys = jQuery.extend(true, {}, data);
+					//polys = jQuery.extend(true, {}, data);
+		});
+		jqxhr.done(function() { 
+			polys = jQuery.extend(true, {}, data) ; 
 		});
 }
 
 function getSides() {
-	var s = parseInt($('#x').val() );
-	return s;
+	return parseInt($('#x').val() );
 }
 
 function getAngle(s) {
-	var degrees = 180 * (s - 2) / s;
-	return degrees;
+	return 180 * (s - 2) / s;
 }
 
 function draw() {
