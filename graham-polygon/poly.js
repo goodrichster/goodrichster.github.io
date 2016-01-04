@@ -4,10 +4,10 @@ var polys = new Object(); // global var to hold polys json object
 //var polys; // global var to hold polys json object
 
 function setPolys(data) {
-	console.log("setPolys() reporting in... about to make a copy of data " + JSON.stringify(data));
+	//console.log("setPolys() reporting in... about to make a copy of data " + JSON.stringify(data));
 	polys = JSON.parse(JSON.stringify(data));
-	console.log ("setPolys() says: data empty is " + (Object.keys(data).length === 0).toString());
-	console.log ("setPolys() says: polys empty is " + (Object.keys(polys).length === 0).toString());
+	//console.log ("setPolys() says: data empty is " + (Object.keys(data).length === 0).toString());
+	//console.log ("setPolys() says: polys empty is " + (Object.keys(polys).length === 0).toString());
 }
 
 function renderPolyOptions() {
@@ -18,6 +18,9 @@ function renderPolyOptions() {
 	if (Object.keys(polys).length === 0) {
 		fetchPolys();
 	}
+
+	console.log ("render now says: polys empty is " + (Object.keys(polys).length === 0).toString());
+
 
 	var options = "<select onchange=\"draw()\" id=\"x\">";
 	var sides= 3;
@@ -37,16 +40,16 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
+		//console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
-			console.log ("post-fetch says: data empty is " + (Object.keys(data).length === 0).toString() );
+			//console.log ("post-fetch says: data empty is " + (Object.keys(data).length === 0).toString() );
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
 			setPolys(data);
+			console.log ("post-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 		});
-		console.log ("post-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 }
 
 function getSides() {
