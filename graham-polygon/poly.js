@@ -1,6 +1,9 @@
 //var polys = new Object(); // global var to hold polys json object
 var polys; // global var to hold polys json object
-console.log("init: " + polys);
+
+function setPolys(data) {
+	polys = data;
+}
 
 function renderPolyOptions() {
 
@@ -35,7 +38,7 @@ function fetchPolys() {
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
-			polys = data;
+			setPolys(data);
 		});
 		console.log ("post-fetch says: polys empty is " + (polys === void 0).toString() + polys.Triangle);
 }
