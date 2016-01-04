@@ -18,7 +18,7 @@ function renderPolyOptions() {
 	}
 	options += "</select>"
 	console.log(options);
-	$('#poly-options').text(options);
+	$('#poly-options').html(options);
 }
 
 function fetchPolys() {
