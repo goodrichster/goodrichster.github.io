@@ -24,6 +24,8 @@ function renderPolyOptions() {
 	options += "</select>"
 	console.log(options);
 	$('#poly-options').html(options);
+
+	draw(); // for first page load
 }
 
 function fetchPolys() {
@@ -34,7 +36,6 @@ function fetchPolys() {
 			}
 			setPolys(data)
 		});
-		draw();
 }
 
 function getSides() {
