@@ -11,7 +11,7 @@ function renderPolyOptions() {
 	console.log("renderPolyOptions() Drawing drop-down");
 	var selectString = "<select onchange=\"draw()\" id=\"x\">"
 	var options = "<!-- dynamic rendering --> " + selectString; 
-	var sides= 0;
+	var sides= 3;
 	for (var prop in polys) {
 		sides += 1;
 		var name = prop;
