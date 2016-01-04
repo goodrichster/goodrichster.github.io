@@ -3,8 +3,10 @@
 var polys = new Object(); // global var to hold polys json object
 var MAX_SIDES = 30;
 
-drawSlider();
-renderPolyOptions();
+function init() {
+	drawSlider();
+	renderPolyOptions();
+}
 
 function setPolys(data) {
 	//polys = JSON.parse(JSON.stringify(data));
@@ -62,6 +64,9 @@ function getAngle(s) {
 }
 
 function draw() {
+	
+	renderPolyOptions();
+
 	
 	var s = getSides();
 
