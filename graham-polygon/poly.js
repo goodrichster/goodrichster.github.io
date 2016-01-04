@@ -1,8 +1,8 @@
-var polys;
+// var polys;
 
 function setPolys(remotePolys) {
 	// init the polys for listing from json
-	polys = remotePolys;
+	var polys = remotePolys;
 	console.log("Setting " + polys);
 }
 
