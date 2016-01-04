@@ -40,7 +40,7 @@ function fetchPolys() {
 		var jqxhr = $.getJSON("./poly-data.json").done( function(data) {
 					//polys = jQuery.extend(true, {}, data);
 		});
-		jqxhr.done(function() { 
+		jqxhr.done(function(data) { 
 			polys = jQuery.extend(true, {}, data) ; 
 		});
 }
