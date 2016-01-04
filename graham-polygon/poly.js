@@ -4,8 +4,9 @@ var polys = new Object(); // global var to hold polys json object
 //var polys; // global var to hold polys json object
 
 function setPolys(data) {
-	console.log("setPolys() reporting in... ");
+	console.log("setPolys() reporting in... about to make a copy");
 	polys = JSON.parse(JSON.stringify(data));
+	console.log ("setPolys() says: polys empty is " + (Object.keys(polys).length === 0).toString());
 }
 
 function renderPolyOptions() {
