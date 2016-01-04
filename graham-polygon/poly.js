@@ -1,7 +1,7 @@
 //TODO http://threejs.org/
 
 var polys = new Object(); // global var to hold polys json object
-var MAX_SIDES = 12;
+var MAX_SIDES = 12; // hard code 12, overwrite with qs
 
 function init() {
 	var qSides = parseInt(location.search.split('?')[1]);
@@ -16,6 +16,9 @@ function init() {
 function setPolys(data) {
 	//polys = JSON.parse(JSON.stringify(data));
 	polys = jQuery.extend(true, {}, data);
+	for (var prop in data) {
+	console.log("Polys Shape " + prop + " has " + polys[prop] + " sides.");			
+	}
 }
 
 function renderPolyOptions() {
@@ -39,12 +42,10 @@ function renderPolyOptions() {
 		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
-
 	$('#poly-options').html(options);
 }
 
 function fetchPolys() {
-		//console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 		$.getJSON("./poly-data.json").done( function(data) {
 				for (var prop in data) {
 					//console.log("Shape " + prop + " has " + data[prop] + " sides.");			
@@ -56,13 +57,11 @@ function fetchPolys() {
 
 function getSides() {
 	var s = parseInt($('#x').val() );
-	// console.log ("The computer say there are this many sides " + s);
 	return s;
 }
 
 function getAngle(s) {
 	var degrees = 180 * (s - 2) / s;
-	// console.log ("The computer say there are this many degrees " + degrees);
 	return degrees;
 }
 
