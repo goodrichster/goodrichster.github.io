@@ -4,14 +4,7 @@ function setPolys(data) {
 	// init the polys for listing from json
 	polys = data;
 	console.log("Setting " + polys);
-	for (var prop in polys) {
-		// console.log("setPolys() " + prop + " has " + polys[prop] + " sides.");			
-	}
-}
-
-function getPolys() {
-	// redundant due to global var polys
-	//console.log(polys);
+	renderPolyOptions();
 }
 
 function renderPolyOptions() {
@@ -22,6 +15,7 @@ function renderPolyOptions() {
 		var size = polys[prop];
 		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
 	}
+	console.log(options);
 	$('#poly-options').text(options);
 }
 
@@ -33,8 +27,6 @@ function fetchPolys() {
 			}
 			setPolys(data)
 		});
-//		setPolys( jQuery.parseJSON( jsonString ) );
-//		setPolys( jsonString );
 		draw();
 }
 
