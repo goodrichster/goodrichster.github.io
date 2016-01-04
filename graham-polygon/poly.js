@@ -10,7 +10,7 @@ function setPolys(data) {
 
 function renderPolyOptions() {
 
-	console.log ("render says: polys empty is " + (polys === void 0).toString() );
+	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0);
 
 	// if polys is empty, fetch the data
 	if (Object.keys(polys).length === 0) {
@@ -35,7 +35,7 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		console.log ("pre-fetch says: polys empty is " + (polys === void 0).toString() );
+		console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 		$.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
 			for (var prop in data) {
@@ -43,7 +43,7 @@ function fetchPolys() {
 			}
 			setPolys(data);
 		});
-		console.log ("post-fetch says: polys empty is " + (polys === void 0).toString() );
+		console.log ("post-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 }
 
 function getSides() {
