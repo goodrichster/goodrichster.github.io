@@ -36,12 +36,13 @@ function renderPolyOptions() {
 
 function fetchPolys() {
 		console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
-		polys = $.getJSON("./poly-data.json", function(data) {
+		$.getJSON("./poly-data.json", function(data) {
+			polys = data;
 			console.log("got JSON");
 			for (var prop in data) {
 				console.log("Shape " + prop + " has " + data[prop] + " sides.");			
 			}
-			setPolys(data);
+			//setPolys(data);
 		});
 		console.log ("post-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
 }
