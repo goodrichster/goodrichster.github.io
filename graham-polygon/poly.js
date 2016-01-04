@@ -1,16 +1,16 @@
-// var polys;
+var polys;
 
 function setPolys(data) {
 	// init the polys for listing from json
-	var polys = data;
+	polys = data;
 	console.log("Setting " + polys);
 	for (var prop in polys) {
-		console.log("setPolys() " + prop + " has " + polys[prop] + " sides.");			
+		// console.log("setPolys() " + prop + " has " + polys[prop] + " sides.");			
 	}
 }
 
 function getPolys() {
-	return polys;
+	console.log(polys);
 }
 
 function fetchPolys() {
