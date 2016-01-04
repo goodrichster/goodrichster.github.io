@@ -19,7 +19,7 @@ function renderPolyOptions() {
 		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
 	}
 	for (i = sides; i < 21; i++) {
-		options += "<option value=\"" + size + "\">" + i + "-gon (" + size + ")</option>";
+		options += "<option value=\"" + i + "\">" + i + "-gon (" + i + ")</option>";
 	}
 	options += "</select>"
 	console.log(options);
