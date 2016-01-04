@@ -40,7 +40,7 @@ function fetchPolys() {
 			}
 			setPolys(data);
 		});
-		console.log ("post-fetch says: polys empty is " + (polys === void 0).toString() + polys.Triangle);
+		console.log ("post-fetch says: polys empty is " + (polys === void 0).toString() );
 }
 
 function getSides() {
