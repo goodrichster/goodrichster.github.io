@@ -1,18 +1,15 @@
 //TODO http://threejs.org/
 
 var polys = new Object(); // global var to hold polys json object
-var MAX_SIDES = 40;
+var MAX_SIDES = 12;
 
 function init() {
 	var qSides = parseInt(location.search.split('?')[1]);
-	if (Number.isInteger(qSides))
-	{
+	if (Number.isInteger(qSides)){
 		MAX_SIDES = qSides;
 	}
-	// console.log("qSides is " + parseInt(qSides)) ;
-	// console.log("Max is " + MAX_SIDES) ;
-
 	drawSlider();
+	fetchPolys();
 	renderPolyOptions();
 }
 
@@ -72,36 +69,14 @@ function getAngle(s) {
 }
 
 function draw() {
-
-	renderPolyOptions();
-
 	var s = getSides();
-
 	$( '#slider' ).slider('value',s);
-
 	$('#sides').text( s );
 	$('#angle').text( (getAngle(s)).toFixed(1) );
-	var dataSet = drawPoly(s);
-
-    $('#table').DataTable( {
-    destroy: true,
-    paging: false,
-  	"ordering": false,
-    searching: false,
-    retrieve: true,
-    data: dataSet,
-    columns: [
-        { title: "X-points" },
-        { title: "Y-points" },
-    ]
-} );
-
+	drawPoly(s);
 }
 
 function drawPoly(s) {
-
-	//console.clear()
-
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -114,6 +89,7 @@ function drawPoly(s) {
 	ctx.beginPath();
 	ctx.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));          
 
+	// tracking points in case I want to display this info...
 	var xy = []; while(xy.push([]) < s + 1);
 
 	xy[0][0] = (Xcenter +  size * Math.cos(0)).toFixed(2);
