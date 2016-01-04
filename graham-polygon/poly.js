@@ -13,10 +13,12 @@ function getPolys() {
 function fetchPolys() {
 		var jsonString = $.getJSON("./poly-data.json", function(data) {
 			console.log("got JSON");
-			var shape = data.Triangle;
-			console.log("Shape is"  + shape)
+			foreach prop in jsonString {
+				console.log("Shape " + prop + " has " + jsonString[prop] + " sides.")				
+			}
 		});
-		setPolys( jQuery.parseJSON( jsonString ) );
+//		setPolys( jQuery.parseJSON( jsonString ) );
+		setPolys( jsonString );
 }
 
 function getSides() {
