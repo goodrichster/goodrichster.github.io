@@ -9,15 +9,13 @@ function init() {
 		MAX_SIDES = qSides;
 	}
 	drawSlider();
-	fetchPolys();
 	renderPolyOptions();
 }
 
 function setPolys(data) {
-	//polys = JSON.parse(JSON.stringify(data));
 	polys = jQuery.extend(true, {}, data);
 	for (var prop in data) {
-	console.log("Polys Shape " + prop + " has " + polys[prop] + " sides.");			
+		console.log("Polys Shape " + prop + " has " + polys[prop] + " sides.");			
 	}
 }
 
@@ -29,7 +27,6 @@ function renderPolyOptions() {
 		fetchPolys();
 	}
 	console.log ("render now says: polys empty is " + (Object.keys(polys).length === 0).toString());
-
 
 	var options = "<select onchange=\"draw()\" id=\"x\">";
 	var sides= 3;
@@ -47,12 +44,9 @@ function renderPolyOptions() {
 
 function fetchPolys() {
 		$.getJSON("./poly-data.json").done( function(data) {
-				for (var prop in data) {
-					//console.log("Shape " + prop + " has " + data[prop] + " sides.");			
+					polys = jQuery.extend(true, {}, data);
 				}
-				setPolys(data);
-			}
-		);
+			);
 }
 
 function getSides() {
