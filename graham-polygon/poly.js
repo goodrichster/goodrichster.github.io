@@ -9,12 +9,14 @@ function setPolys(data) {
 
 function renderPolyOptions() {
 	console.log("renderPolyOptions() Drawing drop-down");
-	var options = "<!-- dynamic rendering -->"; 
+	var selectString = "<select onchange=\"draw()\" id=\"x\">"
+	var options = "<!-- dynamic rendering --> " + selectString; 
 	for (var prop in polys) {
 		var name = prop;
 		var size = polys[prop];
 		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
 	}
+	options += "</select>"
 	console.log(options);
 	$('#poly-options').text(options);
 }
