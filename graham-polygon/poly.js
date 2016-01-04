@@ -1,7 +1,7 @@
 //TODO http://threejs.org/
 
 var polys = new Object(); // global var to hold polys json object
-var MAX_SIDES = 30;
+var MAX_SIDES = 40;
 
 function init() {
 	drawSlider();
@@ -64,13 +64,10 @@ function getAngle(s) {
 }
 
 function draw() {
-	
-	//renderPolyOptions();
-
 
 	var s = getSides();
 
-	$( '#slider' ).slider.value = s;
+	$( '#slider' ).slider('value',s);
 
 	$('#sides').text( s );
 	$('#angle').text( (getAngle(s)).toFixed(1) );
