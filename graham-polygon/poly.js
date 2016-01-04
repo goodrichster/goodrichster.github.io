@@ -45,15 +45,13 @@ function renderPolyOptions() {
 
 function fetchPolys() {
 		//console.log ("pre-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
-		$.getJSON("./poly-data.json", function(data) {
-			console.log("got JSON");
-			//console.log ("post-fetch says: data empty is " + (Object.keys(data).length === 0).toString() );
-			for (var prop in data) {
-				//console.log("Shape " + prop + " has " + data[prop] + " sides.");			
+		$.getJSON("./poly-data.json").done( function(data) {
+				for (var prop in data) {
+					//console.log("Shape " + prop + " has " + data[prop] + " sides.");			
+				}
+				setPolys(data);
 			}
-			setPolys(data);
-			console.log ("post-fetch says: polys empty is " + (Object.keys(polys).length === 0).toString() );
-		});
+		);
 }
 
 function getSides() {
