@@ -10,7 +10,7 @@ function setPolys(data) {
 
 function renderPolyOptions() {
 
-	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0);
+	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0).toString());
 
 	// if polys is empty, fetch the data
 	if (Object.keys(polys).length === 0) {
