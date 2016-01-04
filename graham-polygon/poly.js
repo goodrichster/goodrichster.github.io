@@ -13,7 +13,7 @@ function renderPolyOptions() {
 	console.log ("render says: polys empty is " + (polys === void 0).toString() );
 
 	// if polys is empty, fetch the data
-	if (polys === void 0) {
+	if (polys === void 0 || polys == null) {
 		fetchPolys();
 	}
 
