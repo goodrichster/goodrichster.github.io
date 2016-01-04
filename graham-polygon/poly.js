@@ -11,10 +11,15 @@ function renderPolyOptions() {
 	console.log("renderPolyOptions() Drawing drop-down");
 	var selectString = "<select onchange=\"draw()\" id=\"x\">"
 	var options = "<!-- dynamic rendering --> " + selectString; 
+	var sides= 0;
 	for (var prop in polys) {
+		sides += 1;
 		var name = prop;
 		var size = polys[prop];
 		options += "<option value=\"" + size + "\">" + name + " (" + size + ")</option>";
+	}
+	for (i = sides; i < 21; i++) {
+		options += "<option value=\"" + size + "\">" + i + "-gon (" + size + ")</option>";
 	}
 	options += "</select>"
 	console.log(options);
