@@ -12,13 +12,6 @@ function init() {
 	renderPolyOptions();
 }
 
-function setPolys(data) {
-	polys = jQuery.extend(true, {}, data);
-	for (var prop in data) {
-		console.log("Polys Shape " + prop + " has " + polys[prop] + " sides.");			
-	}
-}
-
 function renderPolyOptions() {
 
 	console.log ("render says: polys empty is " + (Object.keys(polys).length === 0).toString());
@@ -43,10 +36,13 @@ function renderPolyOptions() {
 }
 
 function fetchPolys() {
-		$.getJSON("./poly-data.json").done( function(data) {
+		var jqxhr = $.getJSON("./poly-data.json", async: false).done( function(data) {
 					polys = jQuery.extend(true, {}, data);
 				}
 			);
+		jqxhr.complete(function() {
+		  polys = jQuery.extend(true, {}, data);
+		}); 
 }
 
 function getSides() {
